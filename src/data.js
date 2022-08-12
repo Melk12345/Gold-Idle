@@ -21,7 +21,7 @@ const buildings = [{
 }, {
     name: "Booster",
     baseEffect: 2, 
-    baseCost: 1e6,
+    baseCost: 1e5,
     costGrowthRate: 10
 }];
 
