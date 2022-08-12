@@ -57,6 +57,7 @@ function load() {
     calculateAFKGains();
     updateGoldText();
     updateGoldPerSecondText();
+    revealBuildings();
     updateBuildingInfo();
     updateAFKGainsButtonInfo();
 }

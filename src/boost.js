@@ -55,6 +55,13 @@ function boostEffect(boostID) {
     return amount === 0 ? 1 : Math.pow(effect, amount);
 }
 
+function revealBuildings() {
+    for (let i = 0; i < data.buildingAmounts.length; i++) {
+        let element = document.getElementById(`building${i}-row`);
+        element.style.display = data.buildingUnlocked[i] ? "table-row" : "none";
+    }
+}
+
 function buyBuilding(buildingID) {
     if (data.gold < buildingCost(buildingID)) return;
 
@@ -68,6 +75,11 @@ function buyBuilding(buildingID) {
         updateGoldPerSecondText();
         updateBuildingInfo();
         return;
+    }
+
+    if (data.buildingAmounts[buildingID] === 0) {
+        data.buildingUnlocked[buildingID + 1] = true;
+        revealBuildings();
     }
 
     data.gold -= buildingCost(buildingID);
