@@ -25,10 +25,10 @@ const buildings = [{
     costGrowthRate: 10
 }];
 
-const data = {
+let data = {
     time: Date.now(),
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0, 0]
+    buildingAmounts: [0, 0, 0, 0, 0],
 }
