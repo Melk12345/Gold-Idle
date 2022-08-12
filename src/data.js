@@ -30,5 +30,5 @@ let data = {
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0, 1],
+    buildingAmounts: [0, 0, 0, 0, 0],
 }

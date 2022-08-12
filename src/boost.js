@@ -52,7 +52,7 @@ function updateGoldPerSecondText() {
 function boostEffect(boostID) {
     let effect = buildings[boostID].baseEffect;
     let amount = data.buildingAmounts[boostID];
-    return Math.pow(effect, amount);
+    return amount === 0 ? 1 : Math.pow(effect, amount);
 }
 
 function buyBuilding(buildingID) {
