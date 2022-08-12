@@ -1,19 +1,19 @@
 "use strict";
 
-const mainMenuContainerElement = document.getElementById("main-container");
+const boostMenuContainerElement = document.getElementById("boost-container");
 const settingsMenuContainerElement = document.getElementById("settings-container");
 
-let activeMenu = mainMenuContainerElement;
+let activeMenu = boostMenuContainerElement;
 settingsMenuContainerElement.classList.add("is-removed-from-layout");
 
-const mainMenuButtonElement = document.getElementById("main-menu-button");
+const boostMenuButtonElement = document.getElementById("boost-menu-button");
 const settingsMenuButtonElement = document.getElementById("settings-menu-button");
 
 const selectedButtonBorderColor = 'Orange';
 const defaultButtonBorderColor = 'Black';
 
-let activeMenuButton = mainMenuButtonElement;
-mainMenuButtonElement.style.borderColor = selectedButtonBorderColor;
+let activeMenuButton = boostMenuButtonElement;
+boostMenuButtonElement.style.borderColor = selectedButtonBorderColor;
 settingsMenuButtonElement.style.borderColor = defaultButtonBorderColor; 
 
 function openMenu(clickedMenu, clickedMenuButton) {

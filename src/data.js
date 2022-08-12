@@ -1,21 +1,21 @@
 const buildings = [{
-    name: "Generator",
+    name: "Printer",
     baseEffect: 1, 
     baseCost: 10,
     costGrowthRate: 1.4
 }, {
-    name: "Producer",
-    baseEffect: 30, 
-    baseCost: 10,
+    name: "Factory",
+    baseEffect: 10, 
+    baseCost: 250,
     costGrowthRate: 1.6
 }, {
-    name: "Factory",
+    name: "Producer",
     baseEffect: 100, 
-    baseCost: 10,
+    baseCost: 10000,
     costGrowthRate: 1.8
 }, {
-    name: "Printer",
-    baseEffect: 3000, 
+    name: "Generator",
+    baseEffect: 1000, 
     baseCost: 1e8,
     costGrowthRate: 2
 }, {
@@ -30,5 +30,5 @@ let data = {
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0, 0],
+    buildingAmounts: [0, 0, 0, 0, 1],
 }

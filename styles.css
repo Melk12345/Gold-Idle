@@ -9,20 +9,21 @@ body {
     display: none !important;
 }
 
-button.cantBuy {
+button.notBuyable {
     border-color: #B33939;
 }
 
-button.cantBuy:hover {
+button.notBuyable:hover {
     cursor: not-allowed;
 }
 
-button.canBuy {
+button.buyable {
     border-color: Green;
 }
 
-button.canBuy:hover {
+button.buyable:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 #header-container {
@@ -82,12 +83,6 @@ button.canBuy:hover {
     color: black;
     border-width: 4px;
     background-color: silver;
-    transition-duration: 0.5s;
-}
-
-.purchase-buttons:hover {
-    cursor: pointer;
-    transform: scale(1.1);
     transition-duration: 0.5s;
 }
 

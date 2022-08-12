@@ -9,28 +9,29 @@
     <script src="src/helper.js" defer></script>
     <script src="src/data.js" defer></script>
     <script src="src/ui.js" defer></script>
-    <script src="src/main.js" defer></script>
+    <script src="src/boost.js" defer></script>
     <script src="src/settings.js" defer></script>
+    <script src="src/main.js" defer></script>
     <title>Gold Idle</title>
 </head>
 <body>
     <div id="header-container">
         <p>
-            You have <span id="gold-text" style="color:#ABBC5D">0</span> gold <br>
-            You are making <span id="goldPerSecond-text" style="color:#ABBC5D">0</span> gold/s
+            You have <span id="gold-text" style="color:#ABBC4D">0</span> gold <br>
+            You are making <span id="goldPerSecond-text" style="color:#ABBC4D">0</span> gold/s
         </p>
     </div>
     <div id="menu-container">
         <button 
-            onclick="openMenu(mainMenuContainerElement, mainMenuButtonElement)" class="menu-buttons" id="main-menu-button">Main
+            onclick="openMenu(boostMenuContainerElement, boostMenuButtonElement)" class="menu-buttons" id="boost-menu-button">Main
         </button>
         <button 
             onclick="openMenu(settingsMenuContainerElement, settingsMenuButtonElement)" class="menu-buttons" id="settings-menu-button">Settings
         </button>
     </div>
-    <div id="main-container">
-        <div id="main-buttons-container">
-            <table class="table-formatting" id="main-table">
+    <div id="boost-container">
+        <div id="boost-buttons-container">
+            <table class="table-formatting" id="boost-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -41,38 +42,38 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span id="building1-name">Printer</span></td>
+                        <td><span id="building0-name">Printer</span></td>
+                        <td><span id="building0-amount">0</span></td>
+                        <td><span id="building0-effect">+1/s</span></td>
+                        <td><span id="building0-cost">10 gold</span></td>
+                        <td><button onclick="buyBuilding(0)" class="purchase-buttons" id="building0-button">Purchase</button></td>
+                    </tr>
+                    <tr>
+                        <td><span id="building1-name">Factory</span></td>
                         <td><span id="building1-amount">0</span></td>
-                        <td><span id="building1-effect">+1/s</span></td>
-                        <td><span id="building1-cost">10 gold</span></td>
+                        <td><span id="building1-effect">+10/s</span></td>
+                        <td><span id="building1-cost">250 gold</span></td>
                         <td><button onclick="buyBuilding(1)" class="purchase-buttons" id="building1-button">Purchase</button></td>
                     </tr>
                     <tr>
-                        <td><span id="building2-name">Factory</span></td>
+                        <td><span id="building2-name">Producer</span></td>
                         <td><span id="building2-amount">0</span></td>
-                        <td><span id="building2-effect">+30/s</span></td>
-                        <td><span id="building2-cost">250 gold</span></td>
+                        <td><span id="building2-effect">+100/s</span></td>
+                        <td><span id="building2-cost">10,000 gold</span></td>
                         <td><button onclick="buyBuilding(2)" class="purchase-buttons" id="building2-button">Purchase</button></td>
                     </tr>
                     <tr>
-                        <td><span id="building3-name">Producer</span></td>
+                        <td><span id="building3-name">Generator</span></td>
                         <td><span id="building3-amount">0</span></td>
-                        <td><span id="building3-effect">+100/s</span></td>
-                        <td><span id="building3-cost">10,000 gold</span></td>
+                        <td><span id="building3-effect">+1,000/s</span></td>
+                        <td><span id="building3-cost">1.00e8 gold</span></td>
                         <td><button onclick="buyBuilding(3)" class="purchase-buttons" id="building3-button">Purchase</button></td>
                     </tr>
                     <tr>
-                        <td><span id="building4-name">Generator</span></td>
+                        <td><span id="building4-name">Booster</span></td>
                         <td><span id="building4-amount">0</span></td>
-                        <td><span id="building4-effect">+3,000/s</span></td>
-                        <td><span id="building4-cost">1.00e8 gold</span></td>
-                        <td><button onclick="buyBuilding(4)" class="purchase-buttons" id="building4-button">Purchase</button></td>
-                    </tr>
-                    <tr>
-                        <td><span id="building5-name">Booster</span></td>
-                        <td><span id="building5-amount">0</span></td>
-                        <td><span id="building5-effect">x2.00</span></td>
-                        <td><span id="building5-cost">1.00e6 gold</span></td>
+                        <td><span id="building4-effect">x2.00</span></td>
+                        <td><span id="building4-cost">1.00e6 gold</span></td>
                         <td><button onclick="buyBuilding(4)" class="purchase-buttons" id="building4-button">Purchase</button></td>
                     </tr>
                 </tbody>

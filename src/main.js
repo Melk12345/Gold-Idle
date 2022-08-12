@@ -3,21 +3,24 @@
 const goldTextElement = document.getElementById("gold-text");
 const goldPerSecondTextElement = document.getElementById("goldPerSecond-text");
 
-function headerInfo() {
+function updateGoldText() {
     goldTextElement.innerHTML = format(data.gold);
-    goldPerSecondTextElement.innerHTML = format(goldPerSecond());
 }
 
 function goldPerSecond() {
     let goldPerSecond = 0;
-    for (let i = 0; i < buildings.length; i++) {
+    let boostID = data.buildingAmounts.length - 1;
+    for (let i = 0; i < boostID; i++) {
         goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i];
     }
+    goldPerSecond *= boostEffect(boostID);
     return goldPerSecond;
 }
 
 function productionLoop(deltaTime) {
     data.gold += goldPerSecond() * deltaTime;
+    updateGoldText();
+    updateBuildingPurchaseColor();
 }
 
 function calculateAFKGains() {
@@ -51,12 +54,15 @@ function mainLoop() {
 
 function load() {
     loadSavedData();
-    headerInfo();
+    calculateAFKGains();
+    updateGoldText();
+    updateGoldPerSecondText();
+    updateBuildingInfo();
+    updateAFKGainsButtonInfo();
 }
 
 window.onload = function() {
     load();
-    calculateAFKGains();
 }
 
 window.onbeforeunload = function() { 
