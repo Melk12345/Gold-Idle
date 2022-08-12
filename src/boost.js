@@ -77,7 +77,8 @@ function buyBuilding(buildingID) {
         return;
     }
 
-    if (data.buildingAmounts[buildingID] === 0) {
+    // dont unlock the next building if the buildingID is below booster
+    if (data.buildingAmounts[buildingID] === 0 && buildingID < data.buildingAmounts.length - 2) {
         data.buildingUnlocked[buildingID + 1] = true;
         revealBuildings();
     }

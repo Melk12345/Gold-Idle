@@ -25,6 +25,13 @@ const buildings = [{
     costGrowthRate: 10,
 }];
 
+const upgrades = [{
+    name: "BOOOOOOOST",
+    amount: 0,
+    description: "Unlocks the Booster Building!",
+    unlockCost: 50000
+}]
+
 let data = {
     time: Date.now(),
     firstTime: true,
