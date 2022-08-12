@@ -29,10 +29,8 @@ function calculateAFKGains() {
     if (!data.AFKGains) return;
 
     const now = Date.now();
-    let delta = (now - data.time) / 1000;
-    let goldToGain = 0;
-    goldToGain += goldPerSecond() * delta;
-    data.gold += goldToGain;
+    let delta = now - data.time;
+    data.gold += goldPerSecond();
 
     const seconds = Math.floor((delta / 1000) % 60);
     const minutes = Math.floor((delta / (1000 * 60)) % 60);

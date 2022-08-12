@@ -9,6 +9,22 @@ body {
     display: none !important;
 }
 
+button.cantBuy {
+    border-color: #B33939;
+}
+
+button.cantBuy:hover {
+    cursor: not-allowed;
+}
+
+button.canBuy {
+    border-color: Green;
+}
+
+button.canBuy:hover {
+    cursor: pointer;
+}
+
 #header-container {
     text-align: center;
     font-size: 20px;
