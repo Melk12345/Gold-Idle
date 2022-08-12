@@ -1,0 +1,117 @@
+body {
+    font-family: 'Roboto Mono';
+    background-color: #324458;
+    color: lightgray;
+    user-select: none;
+}
+
+.is-removed-from-layout {
+    display: none !important;
+}
+
+#header-container {
+    text-align: center;
+    font-size: 20px;
+}
+
+#gold-text {
+    font-size: 30px;
+}
+
+#goldPerSecond-text {
+    font-size: 30px;
+}
+
+#menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 25px 0px;
+}
+
+.menu-buttons {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    background-color: silver;
+    width: 175px;
+    height: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-width: 4px;
+    font-family: 'Roboto Mono';
+    transition-duration: 0.5s;
+}
+
+.menu-buttons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.table-formatting {
+    width: 60%;
+    font-size: 20px;
+    margin: 0 auto;
+	text-align: center;
+    border-spacing: 0 4px;
+    table-layout: fixed;
+}
+
+.purchase-buttons {
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    font-family: 'Roboto Mono';
+    color: black;
+    border-width: 4px;
+    background-color: silver;
+    transition-duration: 0.5s;
+}
+
+.purchase-buttons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#buy-amount-buttons-container {
+    text-align: center;
+}
+
+.buy-amount-buttons {
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+    font-family: 'Roboto Mono';
+    color: black;
+    border-width: 4px;
+    background-color: silver;
+    transition-duration: 0.5s;
+}
+
+.buy-amount-buttons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#settings-container {
+    text-align: center;
+}
+
+.settings-buttons {
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    font-family: 'Roboto Mono';
+    color: black;
+    border-width: 4px;
+    background-color: silver;
+}
+
+.settings-buttons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
