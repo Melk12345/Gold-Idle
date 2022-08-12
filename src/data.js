@@ -21,7 +21,7 @@ const buildings = [{
 }, {
     name: "Booster",
     baseEffect: 2, 
-    baseCost: 1e6,
+    baseCost: 1e5,
     costGrowthRate: 10,
 }];
 
@@ -37,6 +37,6 @@ let data = {
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0, 1],
+    buildingAmounts: [0, 0, 0, 0, 0],
     buildingUnlocked: [true, false, false, false, false]
 }
