@@ -67,7 +67,7 @@ function buyBuilding(buildingID) {
 
     let boostID = data.buildingAmounts.length - 1;
     if (buildingID === boostID && confirm("Are you sure you want to boost? This will double your boost effect, but reset your other building amounts to 0.")) {
-        data.gold -= buildingCost(boostID);
+        data.gold = 10;
         data.buildingAmounts[boostID]++;
         for (let i = 0; i < boostID; i++) {
             data.buildingAmounts[i] = 0;
