@@ -31,7 +31,10 @@
         </button>
     </div>
     <div id="boost-container">
-        <div id="boost-buttons-container">
+        <div id="boost-buildings-autobuy-container">
+            <button onclick="autobuyButtons(0)" class="autobuy-buttons" id="autobuy-buildngs-button">Auto: OFF</button>
+        </div>
+        <div id="boost-buildings-container">
             <table class="table-formatting" id="boost-table">
                 <thead>
                     <tr>
@@ -79,6 +82,58 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div id="boost-booster-autobuy-container">
+            <button onclick="autobuyButtons(1)" class="autobuy-buttons" id="autobuy-booster-button">Auto: OFF</button>
+        </div>
+        <div id="boost-upgrades-autobuy-container">
+            <button onclick="autobuyButtons(2)" class="autobuy-buttons" id="autobuy-upgrades-button">Auto: OFF</button>
+        </div>
+        <div id="boost-upgrade-buttons-container">
+            <div id="boost-upgrade-buttons-row1">
+                <button onclick="buyUpgrade(0)" class="upgrade-buttons" id="upgrade0-button">
+                    <span id="upgrade0-description">Gain more gold based on total buildings owned!</span> <br>
+                    <span id="upgrade0-effect">Currently: 0.00x</span> <br>
+                    <span id="upgrade0-cost">Cost: 1,000 gold</span>
+                </button>
+                <button onclick="buyUpgrade(1)" class="upgrade-buttons" id="upgrade1-button">
+                    <span id="upgrade1-description">Gain more gold based on your gold!</span> <br>
+                    <span id="upgrade1-effect">Currently: 0.00x</span> <br>
+                    <span id="upgrade1-cost">Cost: 10,000 gold</span>
+                </button>
+                <button onclick="buyUpgrade(2)" class="upgrade-buttons" id="upgrade2-button">
+                    <span id="upgrade2-description">Unlocks the Booster Building!</span> <br>
+                    <span id="upgrade2-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade2-cost">Cost: 50,000 gold</span>
+                </button>
+                <button onclick="buyUpgrade(3)" class="upgrade-buttons" id="upgrade3-button">
+                    <span id="upgrade3-description">Unlocks the Buildings Autobuyer!</span> <br>
+                    <span id="upgrade3-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade3-cost">Cost: 1.00e10 gold</span>
+                </button>
+            </div>
+            <div id="boost-upgrade-buttons-row2">
+                <button onclick="buyUpgrade(4)" class="upgrade-buttons" id="upgrade4-button">
+                    <span id="upgrade4-description">Unlocks the Boosters Autobuyer!</span> <br>
+                    <span id="upgrade4-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade4-cost">Cost: 1.00e10 gold</span>
+                </button>
+                <button onclick="buyUpgrade(5)" class="upgrade-buttons" id="upgrade5-button">
+                    <span id="upgrade5-description">Unlocks the Upgrades Autobuyer!</span> <br>
+                    <span id="upgrade5-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade5-cost">Cost: 1.00e10 gold</span>
+                </button>
+                <button onclick="buyUpgrade(6)" class="upgrade-buttons" id="upgrade6-button">
+                    <span id="upgrade6-description">Unlocks the Booster Building!</span> <br>
+                    <span id="upgrade6-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade6-cost">Cost: 50,000 gold</span>
+                </button>
+                <button onclick="buyUpgrade(7)" class="upgrade-buttons" id="upgrade7-button">
+                    <span id="upgrade7-description">Unlocks the Booster Building!</span> <br>
+                    <span id="upgrade7-effect">Currently: LOCKED</span> <br>
+                    <span id="upgrade7-cost">Cost: 50,000 gold</span>
+                </button>
+            </div>
         </div>
     </div>
     <div id="settings-container">
