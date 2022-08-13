@@ -33,14 +33,18 @@ function calculateAFKGains() {
 
     const now = Date.now();
     let delta = now - data.time;
-    data.gold += goldPerSecond();
+    let timeAwayInSeconds = delta / 1000;
+    let goldGained = goldPerSecond() * timeAwayInSeconds;
+    data.gold += goldGained;
 
     const seconds = Math.floor((delta / 1000) % 60);
     const minutes = Math.floor((delta / (1000 * 60)) % 60);
     const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
     const days = Math.floor(delta / (1000 * 60 * 60 * 24));
 
-    console.log(`You were gone for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`); 
+    console.log(`You were gone for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`); 
+    console.log(`goldGained = ${goldPerSecond()} (gold/s) * ${format(timeAwayInSeconds)} (time away in seconds)`);
+    console.log(`You gained ${format(goldGained)} gold while you were away!`);
 }
 
 let lastUpdate = Date.now();
@@ -67,6 +71,7 @@ window.onload = function() {
 }
 
 window.onbeforeunload = function() { 
+    data.previousGold = data.gold;
     autoSaveData();
 }
 

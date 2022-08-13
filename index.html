@@ -24,7 +24,7 @@
     </div>
     <div id="menu-container">
         <button 
-            onclick="openMenu(boostMenuContainerElement, boostMenuButtonElement)" class="menu-buttons" id="boost-menu-button">Main
+            onclick="openMenu(boostMenuContainerElement, boostMenuButtonElement)" class="menu-buttons" id="boost-menu-button">Boost
         </button>
         <button 
             onclick="openMenu(settingsMenuContainerElement, settingsMenuButtonElement)" class="menu-buttons" id="settings-menu-button">Settings
@@ -38,7 +38,7 @@
                         <th>Name</th>
                         <th>Amount</th>
                         <th>Effect</th>
-                        <th>Cost</th>
+                        <th>Cost (in gold)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,47 +46,39 @@
                         <td><span id="building0-name">Printer</span></td>
                         <td><span id="building0-amount">0</span></td>
                         <td><span id="building0-effect">+1/s</span></td>
-                        <td><span id="building0-cost">10 gold</span></td>
+                        <td><span id="building0-cost">10</span></td>
                         <td><button onclick="buyBuilding(0)" class="purchase-buttons" id="building0-button">Purchase</button></td>
                     </tr>
                     <tr id="building1-row">
                         <td><span id="building1-name">Factory</span></td>
                         <td><span id="building1-amount">0</span></td>
                         <td><span id="building1-effect">+10/s</span></td>
-                        <td><span id="building1-cost">250 gold</span></td>
+                        <td><span id="building1-cost">250</span></td>
                         <td><button onclick="buyBuilding(1)" class="purchase-buttons" id="building1-button">Purchase</button></td>
                     </tr>
                     <tr id="building2-row">
                         <td><span id="building2-name">Producer</span></td>
                         <td><span id="building2-amount">0</span></td>
                         <td><span id="building2-effect">+100/s</span></td>
-                        <td><span id="building2-cost">10,000 gold</span></td>
+                        <td><span id="building2-cost">10,000</span></td>
                         <td><button onclick="buyBuilding(2)" class="purchase-buttons" id="building2-button">Purchase</button></td>
                     </tr>
                     <tr id="building3-row">
                         <td><span id="building3-name">Generator</span></td>
                         <td><span id="building3-amount">0</span></td>
                         <td><span id="building3-effect">+1,000/s</span></td>
-                        <td><span id="building3-cost">1.00e8 gold</span></td>
+                        <td><span id="building3-cost">1.00e8</span></td>
                         <td><button onclick="buyBuilding(3)" class="purchase-buttons" id="building3-button">Purchase</button></td>
                     </tr>
                     <tr id="building4-row">
                         <td><span id="building4-name">Booster</span></td>
                         <td><span id="building4-amount">0</span></td>
                         <td><span id="building4-effect">x2.00</span></td>
-                        <td><span id="building4-cost">1.00e6 gold</span></td>
+                        <td><span id="building4-cost">1.00e6</span></td>
                         <td><button onclick="buyBuilding(4)" class="purchase-buttons" id="building4-button">Purchase</button></td>
                     </tr>
                 </tbody>
             </table>
-            <div id="buy-amount-buttons-container">
-                <p>
-                    <button onclick="" class="buy-amount-buttons" id="buy-one-button">1x</button>
-                    <button onclick="" class="buy-amount-buttons" id="buy-twentyfive-button">10x</button>
-                    <button onclick="" class="buy-amount-buttons" id="buy-hundred-button">100x</button>
-                    <button onclick="" class="buy-amount-buttons" id="buy-max-button">Max</button>
-                </p>
-            </div>
         </div>
     </div>
     <div id="settings-container">

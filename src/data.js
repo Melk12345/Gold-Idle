@@ -16,7 +16,7 @@ const buildings = [{
 }, {
     name: "Generator",
     baseEffect: 1000, 
-    baseCost: 1e6,
+    baseCost: 550000,
     costGrowthRate: 2,
 }, {
     name: "Booster",

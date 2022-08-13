@@ -35,12 +35,12 @@ function updateBuildingInfo() {
             document.getElementById(`building${i}-name`).innerHTML = name;
             document.getElementById(`building${i}-amount`).innerHTML = formatWithCommas(amount);
             document.getElementById(`building${i}-effect`).innerHTML = `+${format(effect)}/s`;
-            document.getElementById(`building${i}-cost`).innerHTML = `${format((cost))} gold`;
+            document.getElementById(`building${i}-cost`).innerHTML = `${format((cost))}`;
         } else {
             document.getElementById(`building${i}-name`).innerHTML = name;
             document.getElementById(`building${i}-amount`).innerHTML = formatWithCommas(amount);
             document.getElementById(`building${i}-effect`).innerHTML = `x${format(boostEffect(boostID))}`;
-            document.getElementById(`building${i}-cost`).innerHTML = `${format((cost))} gold`;
+            document.getElementById(`building${i}-cost`).innerHTML = `${format((cost))}`;
         }
     }
 }
@@ -89,6 +89,6 @@ function buyBuilding(buildingID) {
     let amount = data.buildingAmounts[buildingID];
     let cost = buildingCost(buildingID);
     document.getElementById(`building${buildingID}-amount`).innerHTML = formatWithCommas(amount);
-    document.getElementById(`building${buildingID}-cost`).innerHTML = `${format((cost))} gold`;
+    document.getElementById(`building${buildingID}-cost`).innerHTML = `${format((cost))}`;
     updateGoldPerSecondText();
 }

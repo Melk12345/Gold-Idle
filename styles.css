@@ -11,10 +11,7 @@ body {
 
 button.notBuyable {
     border-color: #B33939;
-}
-
-button.notBuyable:hover {
-    cursor: not-allowed;
+    pointer-events: none;
 }
 
 button.buyable {
@@ -28,15 +25,15 @@ button.buyable:hover {
 
 #header-container {
     text-align: center;
-    font-size: 20px;
+    font-size: 12px;
 }
 
 #gold-text {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #goldPerSecond-text {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #menu-container {
@@ -48,14 +45,14 @@ button.buyable:hover {
 
 .menu-buttons {
     text-align: center;
-    font-size: 20px;
+    font-size: 12px;
     color: black;
     background-color: silver;
-    width: 175px;
-    height: 50px;
+    width: 120px;
+    height: 25px;
     margin-left: 25px;
     margin-right: 25px;
-    border-width: 4px;
+    border-width: 3px;
     font-family: 'Roboto Mono';
     transition-duration: 0.5s;
 }
@@ -68,42 +65,22 @@ button.buyable:hover {
 
 .table-formatting {
     width: 60%;
-    font-size: 20px;
+    font-size: 12px;
     margin: 0 auto;
 	text-align: center;
     border-spacing: 0 4px;
     table-layout: fixed;
+    min-width: 525px;
+    max-width: 525px;
 }
 
 .purchase-buttons {
-    font-size: 20px;
-    height: 50px;
-    width: 150px;
+    font-size: 12px;
+    height: 25px;
     font-family: 'Roboto Mono';
     color: black;
-    border-width: 4px;
+    border-width: 3px;
     background-color: silver;
-    transition-duration: 0.5s;
-}
-
-#buy-amount-buttons-container {
-    text-align: center;
-}
-
-.buy-amount-buttons {
-    font-size: 20px;
-    height: 50px;
-    width: 100px;
-    font-family: 'Roboto Mono';
-    color: black;
-    border-width: 4px;
-    background-color: silver;
-    transition-duration: 0.5s;
-}
-
-.buy-amount-buttons:hover {
-    cursor: pointer;
-    transform: scale(1.1);
     transition-duration: 0.5s;
 }
 
@@ -112,12 +89,11 @@ button.buyable:hover {
 }
 
 .settings-buttons {
-    font-size: 20px;
-    height: 55px;
-    width: 200px;
+    font-size: 12px;
+    height: 25px;
     font-family: 'Roboto Mono';
     color: black;
-    border-width: 4px;
+    border-width: 3px;
     background-color: silver;
 }
 
