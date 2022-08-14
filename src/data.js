@@ -26,8 +26,31 @@ const buildings = [{
 }];
 
 const upgrades = [{
-    name: "BOOOOOOOST",
-    amount: 0,
+    description: "Unlocks the Booster Building!",
+    effect: 1,
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    effect: 1,
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    effect: 1,
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    effect: 1,
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    unlockCost: 50000
+}, {
+    description: "Unlocks the Booster Building!",
+    unlockCost: 50000
+}, {
     description: "Unlocks the Booster Building!",
     unlockCost: 50000
 }]
@@ -38,5 +61,6 @@ let data = {
     AFKGains: true,
     gold: 10,
     buildingAmounts: [0, 0, 0, 0, 0],
-    buildingUnlocked: [true, false, false, false, false]
+    buildingUnlocked: [true, false, false, false, false],
+    upgradeUnlocked: [false, false, false, false, false, false, false, false]
 }
