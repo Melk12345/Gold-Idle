@@ -27,7 +27,7 @@ function updateBuildingInfo() {
     for (let i = 0; i < data.buildingAmounts.length; i++) {
         let name = buildings[i].name;
         let amount = data.buildingAmounts[i];
-        let effect = buildingEffect(i);
+        let effect = buildings[i].baseEffect;
         let cost = buildingCost(i);
         let boostID = data.buildingAmounts.length - 1;
 
