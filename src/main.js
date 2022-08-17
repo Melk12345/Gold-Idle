@@ -4,16 +4,15 @@ const goldTextElement = document.getElementById("gold-text");
 const goldPerSecondTextElement = document.getElementById("goldPerSecond-text");
 
 function updateGoldText() {
-    goldTextElement.innerHTML = format(data.gold);
+    goldTextElement.textContent = format(data.gold);
 }
 
 function goldPerSecond() {
     let goldPerSecond = 0;
-    let boostID = data.buildingAmounts.length - 1;
-    for (let i = 0; i < boostID; i++) {
+    for (let i = 0; i < data.buildingsUnlocked.length; i++) {
         goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i];
     }
-    goldPerSecond *= boostEffect(boostID);
+    goldPerSecond *= prestigeMultiplier();
     return goldPerSecond;
 }
 
@@ -21,6 +20,7 @@ function productionLoop(deltaTime) {
     data.gold += goldPerSecond() * deltaTime;
     updateGoldText();
     updateBuildingPurchaseColor();
+    updatePrestigeButtonColor();
 }
 
 function calculateAFKGains() {
@@ -63,6 +63,7 @@ function load() {
     updateGoldPerSecondText();
     revealBuildings();
     updateBuildingInfo();
+    updatePrestigeInfo();
     updateAFKGainsButtonInfo();
 }
 

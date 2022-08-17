@@ -18,41 +18,39 @@ const buildings = [{
     baseEffect: 1000, 
     baseCost: 550000,
     costGrowthRate: 2,
-}, {
-    name: "Booster",
-    baseEffect: 2, 
-    baseCost: 1e5,
-    costGrowthRate: 10,
 }];
 
+const prestige = {
+    name: "Prestige",
+    baseEffect: 2, 
+    baseCost: 1e6,
+    costGrowthRate: 10,
+}
+
 const upgrades = [{
-    description: "Unlocks the Booster Building!",
-    effect: 1,
+    description: "Gain more gold based on total buildings owned!",
+    type: "Multiplier",
+    unlockCost: 1000
+}, {
+    description: "Gain more gold based on your gold!",
+    type: "Multiplier",
+    unlockCost: 10000
+}, {
+    description: "Gain more gold based on your Prestige Level",
+    type: "Multiplier",
     unlockCost: 50000
 }, {
-    description: "Unlocks the Booster Building!",
-    effect: 1,
-    unlockCost: 50000
+    description: "Unlocks the Buildings Autobuyer!",
+    type: "Unlockable",
+    unlockCost: 1e15
 }, {
-    description: "Unlocks the Booster Building!",
-    effect: 1,
-    unlockCost: 50000
+    description: "Unlocks the Upgrades Autobuyer!",
+    type: "Unlockable",
+    unlockCost: 1e20
 }, {
-    description: "Unlocks the Booster Building!",
-    effect: 1,
-    unlockCost: 50000
-}, {
-    description: "Unlocks the Booster Building!",
-    unlockCost: 50000
-}, {
-    description: "Unlocks the Booster Building!",
-    unlockCost: 50000
-}, {
-    description: "Unlocks the Booster Building!",
-    unlockCost: 50000
-}, {
-    description: "Unlocks the Booster Building!",
-    unlockCost: 50000
+    description: "Unlocks the Prestige Autobuyer!",
+    type: "Unlockable",
+    unlockCost: 1e25
 }]
 
 let data = {
@@ -60,7 +58,8 @@ let data = {
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0, 0],
-    buildingUnlocked: [true, false, false, false, false],
-    upgradeUnlocked: [false, false, false, false, false, false, false, false]
+    buildingAmounts: [0, 0, 0, 0],
+    buildingsUnlocked: [true, false, false, false],
+    prestigeLevel: 0,
+    upgradesUnlocked: [false, false, false, false, false, false, false, false]
 }

@@ -49,8 +49,8 @@ function exportData() {
 const toggleAFKGainsButtonElement = document.getElementById("toggle-afk-gains-button");
 
 function updateAFKGainsButtonInfo() {
-    if (data.AFKGains) toggleAFKGainsButtonElement.innerHTML = "AFK Gains: ON";
-    else toggleAFKGainsButtonElement.innerHTML = "AFK Gains: OFF";
+    if (data.AFKGains) toggleAFKGainsButtonElement.textContent = "AFK Gains: ON";
+    else toggleAFKGainsButtonElement.textContent = "AFK Gains: OFF";
 }
 
 function toggleAFKGains() {
