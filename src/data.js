@@ -20,7 +20,7 @@ const buildings = [{
     costGrowthRate: 2,
 }];
 
-const prestige = {
+const boost = {
     name: "Prestige",
     baseEffect: 2, 
     baseCost: 1e6,
@@ -28,18 +28,26 @@ const prestige = {
 }
 
 const upgrades = [{
-    description: "Gain more gold based on total buildings owned!",
+    description: "Increase your buildings effect based on buildings owned!",
     type: "Multiplier",
     unlockCost: 1000
 }, {
-    description: "Gain more gold based on your gold!",
+    description: "Increase your gold/s multiplier based on your gold!",
     type: "Multiplier",
     unlockCost: 10000
 }, {
-    description: "Gain more gold based on your Prestige Level",
+    description: "Increase your gold multiplier based on your gold/s!",
     type: "Multiplier",
-    unlockCost: 50000
+    unlockCost: 1e5
 }, {
+    description: "Increase your boost multiplier based on your boost level!",
+    type: "Multiplier",
+    unlockCost: 1e10
+}, {
+    description: "Unlocks the Booster Building!",
+    type: "Unlockable",
+    unlockCost: 50000
+}, { 
     description: "Unlocks the Buildings Autobuyer!",
     type: "Unlockable",
     unlockCost: 1e15
@@ -60,6 +68,6 @@ let data = {
     gold: 10,
     buildingAmounts: [0, 0, 0, 0],
     buildingsUnlocked: [true, false, false, false],
-    prestigeLevel: 0,
+    boostLevel: 0,
     upgradesUnlocked: [false, false, false, false, false, false, false, false]
 }

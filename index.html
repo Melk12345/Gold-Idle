@@ -80,11 +80,11 @@
         <div id="boost-booster-autobuy-container">
             <button onclick="autobuyButtons(1)" class="autobuy-buttons" id="autobuy-booster-button">Auto: OFF</button>
         </div>
-        <div id="prestige-container">
-            <button onclick="doPrestige()" class="prestige-buttons" id="prestige-button">
-                <span id="prestige-name">Prestige</span> (<span id="prestige-amount">0</span>) <br>
-                <span id="prestige-effect">Currently: x1.00</span> <br>
-                <span id="prestige-cost">Cost: 1.00e6 gold</span>
+        <div id="boost-container">
+            <button onclick="doPrestige()" class="boost-buttons" id="boost-button">
+                <span id="boost-name">Prestige</span> (<span id="boost-amount">0</span>) <br>
+                <span id="boost-effect">Currently: x1.00</span> <br>
+                <span id="boost-cost">Cost: 1.00e6 gold</span>
             </button>
         </div>
         <div id="boost-upgrades-autobuy-container">
@@ -93,36 +93,46 @@
         <div id="boost-upgrade-buttons-container">
             <div id="boost-upgrade-buttons-row1">
                 <button onclick="buyUpgrade(0)" class="upgrade-buttons" id="upgrade0-button">
-                    <span id="upgrade0-description">Gain more gold based on total buildings owned!</span> <br>
+                    <span id="upgrade0-description">Increase your buildings gold/s based on buildings owned!</span> <br>
                     <span id="upgrade0-effect">Currently: 0.00x</span> <br>
                     <span id="upgrade0-cost">Cost: 1,000 gold</span>
                 </button>
                 <button onclick="buyUpgrade(1)" class="upgrade-buttons" id="upgrade1-button">
-                    <span id="upgrade1-description">Gain more gold based on your gold!</span> <br>
+                    <span id="upgrade1-description">Increase your gold/s multiplier based on your gold!</span> <br>
                     <span id="upgrade1-effect">Currently: 0.00x</span> <br>
                     <span id="upgrade1-cost">Cost: 10,000 gold</span>
                 </button>
                 <button onclick="buyUpgrade(2)" class="upgrade-buttons" id="upgrade2-button">
-                    <span id="upgrade2-description">Unlocks the Booster Building!</span> <br>
-                    <span id="upgrade2-effect">Currently: [LOCKED]</span> <br>
-                    <span id="upgrade2-cost">Cost: 50,000 gold</span>
+                    <span id="upgrade2-description">Increase your gold multiplier based on your gold/s! </span> <br>
+                    <span id="upgrade2-effect">Currently: 0.00x</span> <br>
+                    <span id="upgrade2-cost">Cost: 1.00e5 gold</span>
+                </button>
+                <button onclick="buyUpgrade(3)" class="upgrade-buttons" id="upgrade3-button">
+                    <span id="upgrade3-description">Increase your boost multiplier based on your boost level!</span> <br>
+                    <span id="upgrade3-effect">Currently: 0.00x</span> <br>
+                    <span id="upgrade3-cost">Cost: 1.00e10 gold</span>
                 </button>
             </div>
             <div id="boost-upgrade-buttons-row2">
-                <button onclick="buyUpgrade(3)" class="upgrade-buttons" id="upgrade5-button">
-                    <span id="upgrade3-description">Unlocks the Buildings Autobuyer!</span> <br>
-                    <span id="upgrade3-effect">Currently: [LOCKED]</span> <br>
-                    <span id="upgrade3-cost">Cost: 1.00e10 gold</span>
-                </button>
                 <button onclick="buyUpgrade(4)" class="upgrade-buttons" id="upgrade4-button">
-                    <span id="upgrade4-description">Unlocks the Upgrades Autobuyer!</span> <br>
+                    <span id="upgrade4-description">Unlocks the Booster <br> Building!</span> <br>
                     <span id="upgrade4-effect">Currently: [LOCKED]</span> <br>
-                    <span id="upgrade4-cost">Cost: 1.00e10 gold</span>
+                    <span id="upgrade4-cost">Cost: 50,000 gold</span>
                 </button>
                 <button onclick="buyUpgrade(5)" class="upgrade-buttons" id="upgrade5-button">
-                    <span id="upgrade5-description">Unlocks the Booster Autobuyer!</span> <br>
+                    <span id="upgrade5-description">Unlocks the Buildings <br> Autobuyer!</span> <br>
                     <span id="upgrade5-effect">Currently: [LOCKED]</span> <br>
                     <span id="upgrade5-cost">Cost: 1.00e10 gold</span>
+                </button>
+                <button onclick="buyUpgrade(6)" class="upgrade-buttons" id="upgrade6-button">
+                    <span id="upgrade6-description">Unlocks the Upgrades <br> Autobuyer!</span> <br>
+                    <span id="upgrade6-effect">Currently: [LOCKED]</span> <br>
+                    <span id="upgrade6-cost">Cost: 1.00e10 gold</span>
+                </button>
+                <button onclick="buyUpgrade(7)" class="upgrade-buttons" id="upgrade7-button">
+                    <span id="upgrade7-description">Unlocks the Booster <br> Autobuyer!</span> <br>
+                    <span id="upgrade7-effect">Currently: [LOCKED]</span> <br>
+                    <span id="upgrade7-cost">Cost: 1.00e10 gold</span>
                 </button>
             </div>
         </div>
