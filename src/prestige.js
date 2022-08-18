@@ -38,7 +38,6 @@ function doPrestige() {
     for (let i = 0; i < data.buildingsUnlocked.length; i++) {
         data.buildingAmounts[i] = 0;
     }
-    updateGoldPerSecondText();
     updateBuildingInfo();
     updatePrestigeInfo();
     updatePrestigeButtonColor();

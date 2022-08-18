@@ -120,14 +120,14 @@ button.buyable:hover {
 }
 
 .upgrade-buttons {
-    font-size: 8px;
+    font-size: 10px;
     line-height: 2;
     background-color: silver;
     font-family: 'Roboto Mono';
     color: black;
     border-width: 3px;
-    width: 150px;
-    height: 75px;
+    width: 200px;
+    height: 100px;
     margin: 5px;
 }
 

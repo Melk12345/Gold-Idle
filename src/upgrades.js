@@ -26,13 +26,21 @@ function updateUpgradeInfO() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
         let description = upgrades[i].description;
         let cost = upgrades[i].unlockCost;
+        let buildingAmounts = 0;
+        for (let i = 0; i < data.buildingAmounts.length; i++) {
+            buildingAmounts += data.buildingAmounts[i];
+        }
+        let multiplier1 = Math.sqrt(buildingAmounts + 1) + 1;
+        let multiplier2 = Math.log(data.gold + 1) + 1;
+        let multiplier3 = Math.log(goldPerSecond() + 1) + 1;
+        let multiplier4 = Math.sqrt(data.boostLevel + 1) + 1;
+        const effects = [multiplier1, multiplier2, multiplier3, multiplier4];
 
         if (upgrades[i].type === "Multiplier") {
-            let effect = upgradeEffect(i);
 
             document.getElementById(`upgrade${i}-description`).textContent = description;
-            document.getElementById(`upgrade${i}-effect`).textContent = `Currently: ${format(effect)}x`;
-            document.getElementById(`upgrade${i}-cost`).textContent = `Cost: ${format((cost))} gold`;
+            document.getElementById(`upgrade${i}-effect`).textContent = `Currently: ${format(effects[i])}x`;
+            document.getElementById(`upgrade${i}-cost`).textContent = data.upgradesUnlocked[upgradeID] ? `Cost: [UNLOCKED]` : `Cost: ${format((cost))} gold`;
         } else {
             let effect = data.upgradesUnlocked[i] ? "Currently: [UNLOCKED]" : "Currently: [LOCKED]"
 
@@ -41,4 +49,13 @@ function updateUpgradeInfO() {
             document.getElementById(`upgrade${i}-cost`).textContent = `Cost: ${format((cost))} gold`;
         }
     }
+}
+
+function buyUpgrade(upgradeID) {
+    if (data.gold < upgrades[upgradeID].unlockCost) return;
+
+    data.gold -= upgrades[upgradeID].unlockCost;
+    data.upgradesUnlocked[upgradeID] = true;
+    updateUpgradeInfO();
+    updateGoldPerSecondText();
 }
