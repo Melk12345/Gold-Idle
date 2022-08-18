@@ -3,12 +3,6 @@ function buildingCost(buildingID) {
     let growthRate = buildings[buildingID].costGrowthRate;
     let amount = data.buildingAmounts[buildingID];
     return baseCost * Math.pow(growthRate, amount);
-} 
-
-function buildingEffect(buildingID) {
-    let baseEffect = buildings[buildingID].baseEffect;
-    let amount = data.buildingAmounts[buildingID];
-    return amount === 0 ? baseEffect : baseEffect * amount;
 }
 
 function updateBuildingPurchaseColor() {
@@ -61,6 +55,6 @@ function buyBuilding(buildingID) {
     let cost = buildingCost(buildingID);
     document.getElementById(`building${buildingID}-amount`).textContent = formatWithCommas(amount);
     document.getElementById(`building${buildingID}-cost`).textContent = `${format((cost))}`;
-    updateGoldPerSecondText();
     revealBuildings();
+    updateBuildingInfo();
 }

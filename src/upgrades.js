@@ -22,6 +22,12 @@ function upgradeEffect(upgradeID, currentGps = goldPerSecond() + 1) {
     }
 }
 
+function buildingEffect(buildingID) {
+    let baseEffect = buildings[buildingID].baseEffect;
+    let amount = data.buildingAmounts[buildingID];
+    return amount === 0 ? baseEffect : baseEffect * amount * upgradeEffect(0);
+}
+
 function updateUpgradeInfO() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
         let description = upgrades[i].description;
@@ -57,19 +63,24 @@ function buyUpgrade(upgradeID) {
     data.gold -= upgrades[upgradeID].unlockCost;
     data.upgradesUnlocked[upgradeID] = true;
     updateUpgradeInfO();
-    updateGoldPerSecondText();
     revealUnlockables();
     updateBuildingInfo();
 }
 
 function updateUpgradesColor() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
-        if (data.gold < upgrades[i].unlockCost || data.upgradesUnlocked[i] === true) {
+        if (data.upgradesUnlocked[i] === true) {
+            document.getElementById(`upgrade${i}-button`).classList.add("purchased");
+            document.getElementById(`upgrade${i}-button`).classList.remove("buyable");
+            document.getElementById(`upgrade${i}-button`).classList.remove("notBuyable");
+        } else if (data.gold < upgrades[i].unlockCost) {
             document.getElementById(`upgrade${i}-button`).classList.add("notBuyable");
             document.getElementById(`upgrade${i}-button`).classList.remove("buyable");
+            document.getElementById(`upgrade${i}-button`).classList.remove("purchased");
         } else {
             document.getElementById(`upgrade${i}-button`).classList.add("buyable");
             document.getElementById(`upgrade${i}-button`).classList.remove("notBuyable");
+            document.getElementById(`upgrade${i}-button`).classList.remove("purchased");
         }
     }
 }

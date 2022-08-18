@@ -14,6 +14,11 @@ button.notBuyable {
     pointer-events: none;
 }
 
+button.purchased {
+    border-color: yellow;
+    pointer-events: none;
+}
+
 button.buyable {
     border-color: Green;
 }
