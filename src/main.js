@@ -12,7 +12,7 @@ function goldPerSecond() {
     for (let i = 0; i < data.buildingsUnlocked.length; i++) {
         goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i];
     }
-    goldPerSecond *= boostMultiplier() * upgradeEffect(2);
+    goldPerSecond *= boostMultiplier() * upgradeEffect(2, goldPerSecond);
     return goldPerSecond;
 }
 

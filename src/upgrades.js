@@ -1,26 +1,24 @@
 function revealUnlockables() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
-        if (upgrades[i].type !== "Unlockable") return;
-
         let element = document.getElementById(`unlockable${i}-button`);
-        element.style.display = data.upgradesUnlocked[i] ? "block" : "none";
+        if (element) element.style.display = data.upgradesUnlocked[i] ? "initial" : "none";
     }
 }
 
-function upgradeEffect(upgradeID) {
+function upgradeEffect(upgradeID, currentGps = goldPerSecond() + 1) {
     let buildingAmounts = 0;
     switch (upgradeID) {
         case 0:
             for (let i = 0; i < data.buildingAmounts.length; i++) {
                 buildingAmounts += data.buildingAmounts[i];
             }
-            return Math.sqrt(buildingAmounts + 1) + 1;
+            return data.upgradesUnlocked[0] ? Math.sqrt(buildingAmounts + 1) + 1 : 1;
         case 1:
-            return Math.log(data.gold + 1) + 1;
+            return data.upgradesUnlocked[1] ? Math.log(data.gold + 1) + 1 : 1;
         case 2:
-            return Math.log(goldPerSecond() + 1) + 1;
+            return data.upgradesUnlocked[2] ? Math.log(currentGps + 1) + 1 : 1;
         case 3:
-            return Math.sqrt(data.boostLevel + 1) + 1;
+            return data.upgradesUnlocked[3] ? Math.sqrt(data.boostLevel + 1) + 1 : 1;
     }
 }
 

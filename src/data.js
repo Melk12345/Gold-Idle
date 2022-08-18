@@ -44,19 +44,19 @@ const upgrades = [{
     type: "Multiplier",
     unlockCost: 1e10
 }, {
-    description: "Unlocks the Booster Building!",
+    description: "Unlocks the Booster Building button!",
     type: "Unlockable",
     unlockCost: 50000
 }, { 
-    description: "Unlocks the Buildings Autobuyer!",
+    description: "Unlocks the Buildings Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e15
 }, {
-    description: "Unlocks the Upgrades Autobuyer!",
+    description: "Unlocks the Upgrades Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e20
 }, {
-    description: "Unlocks the Prestige Autobuyer!",
+    description: "Unlocks the Prestige Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e25
 }]
