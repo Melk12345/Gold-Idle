@@ -27,7 +27,7 @@ function updateBuildingInfo() {
     for (let i = 0; i < data.buildingAmounts.length; i++) {
         let name = buildings[i].name;
         let amount = data.buildingAmounts[i];
-        let effect = buildings[i].baseEffect;
+        let effect = buildings[i].baseEffect * upgradeEffect(0);
         let cost = buildingCost(i);
 
         document.getElementById(`building${i}-name`).textContent = name;
@@ -57,8 +57,8 @@ function buyBuilding(buildingID) {
         data.buildingsUnlocked[buildingID + 1] = true;
     }
 
-    //test
-    data.gold += 1e50;
+    // //test
+    // data.gold += 1e50;
 
     let amount = data.buildingAmounts[buildingID];
     let cost = buildingCost(buildingID);

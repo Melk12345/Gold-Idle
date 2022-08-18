@@ -12,15 +12,16 @@ function goldPerSecond() {
     for (let i = 0; i < data.buildingsUnlocked.length; i++) {
         goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i];
     }
-    goldPerSecond *= boostMultiplier();
+    goldPerSecond *= boostMultiplier() * upgradeEffect(2);
     return goldPerSecond;
 }
 
 function productionLoop(deltaTime) {
-    data.gold += goldPerSecond() * deltaTime;
+    data.gold += goldPerSecond() * upgradeEffect(1) * deltaTime;
     updateGoldText();
     updateBuildingPurchaseColor();
     updatePrestigeButtonColor();
+    updateUpgradeInfO();
 }
 
 function calculateAFKGains() {
@@ -63,6 +64,8 @@ function load() {
     updateGoldPerSecondText();
     revealBuildings();
     updateBuildingInfo();
+    revealUnlockables();
+    updateUpgradeInfO();
     updatePrestigeInfo();
     updateAFKGainsButtonInfo();
 }

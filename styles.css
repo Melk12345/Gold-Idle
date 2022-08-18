@@ -63,12 +63,7 @@ button.buyable:hover {
     transition-duration: 0.5s;
 }
 
-#boost-buildings-autobuy-container {
-    text-align: center;
-    margin: 0px;
-}
-
-#autobuy-buildngs-button {
+.autobuy-buttons {
     font-size: 12px;
     height: 25px;
     background-color: silver;
@@ -78,10 +73,15 @@ button.buyable:hover {
     transition-duration: 0.5s;
 }
 
-#autobuy-buildngs-button:hover {
+.autobuy-buttons:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition-duration: 0.5s;
+}
+
+#boost-buildings-autobuy-container {
+    text-align: center;
+    margin: 0px;
 }
 
 .table-formatting {
@@ -100,23 +100,6 @@ button.buyable:hover {
     margin: 0px;
 }
 
-#autobuy-booster-button {
-    font-size: 12px;
-    height: 25px;
-    background-color: silver;
-    font-family: 'Roboto Mono';
-    color: black;
-    border-width: 3px;
-    transition-duration: 0.5s;
-    margin: 5px;
-}
-
-#autobuy-booster-button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition-duration: 0.5s;
-}
-
 .purchase-buttons {
     font-size: 12px;
     height: 25px;
@@ -130,23 +113,6 @@ button.buyable:hover {
 #boost-upgrades-autobuy-container {
     text-align: center;
     margin: 0px;
-}
-
-#autobuy-upgrades-button {
-    font-size: 12px;
-    height: 25px;
-    background-color: silver;
-    font-family: 'Roboto Mono';
-    color: black;
-    border-width: 3px;
-    transition-duration: 0.5s;
-    margin: 5px;
-}
-
-#autobuy-upgrades-button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition-duration: 0.5s;
 }
 
 #boost-upgrade-buttons-container {
