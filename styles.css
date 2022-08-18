@@ -95,7 +95,7 @@ button.buyable:hover {
     max-width: 525px;
 }
 
-#boost-booster-autobuy-container {
+#boost-prestige-autobuy-container {
     text-align: center;
     margin: 0px;
 }
@@ -120,14 +120,14 @@ button.buyable:hover {
 }
 
 .upgrade-buttons {
-    font-size: 10px;
+    font-size: 7px;
     line-height: 2;
     background-color: silver;
     font-family: 'Roboto Mono';
     color: black;
     border-width: 3px;
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 75px;
     margin: 5px;
 }
 

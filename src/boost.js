@@ -57,9 +57,6 @@ function buyBuilding(buildingID) {
         data.buildingsUnlocked[buildingID + 1] = true;
     }
 
-    //test
-    data.gold += 1e50;
-
     let amount = data.buildingAmounts[buildingID];
     let cost = buildingCost(buildingID);
     document.getElementById(`building${buildingID}-amount`).textContent = formatWithCommas(amount);

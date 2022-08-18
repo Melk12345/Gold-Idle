@@ -38,6 +38,9 @@ function doPrestige() {
     for (let i = 0; i < data.buildingsUnlocked.length; i++) {
         data.buildingAmounts[i] = 0;
     }
+    for (let i = 0; i < data.upgradesUnlocked.length / 2; i++) {
+        data.upgradesUnlocked[i] = false;
+    }
     updateBuildingInfo();
     updatePrestigeInfo();
     updatePrestigeButtonColor();

@@ -21,6 +21,7 @@ function productionLoop(deltaTime) {
     updateGoldText();
     updateBuildingPurchaseColor();
     updatePrestigeButtonColor();
+    updateUpgradesColor();
     updateUpgradeInfO();
 }
 

@@ -59,16 +59,17 @@ function buyUpgrade(upgradeID) {
     updateUpgradeInfO();
     updateGoldPerSecondText();
     revealUnlockables();
+    updateBuildingInfo();
 }
 
 function updateUpgradesColor() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
-        if (data.gold < buildingCost(i)) {
-            document.getElementById(`building${i}-button`).classList.add("notBuyable");
-            document.getElementById(`building${i}-button`).classList.remove("buyable");
+        if (data.gold < upgrades[i].unlockCost || data.upgradesUnlocked[i] === true) {
+            document.getElementById(`upgrade${i}-button`).classList.add("notBuyable");
+            document.getElementById(`upgrade${i}-button`).classList.remove("buyable");
         } else {
-            document.getElementById(`building${i}-button`).classList.add("buyable");
-            document.getElementById(`building${i}-button`).classList.remove("notBuyable");
+            document.getElementById(`upgrade${i}-button`).classList.add("buyable");
+            document.getElementById(`upgrade${i}-button`).classList.remove("notBuyable");
         }
     }
 }
