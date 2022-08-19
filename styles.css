@@ -11,6 +11,7 @@ body {
 
 button.notBuyable {
     border-color: #B33939;
+    background-color: #324458;
 }
 
 button.notBuyable:hover {
@@ -19,11 +20,16 @@ button.notBuyable:hover {
 
 button.purchased {
     border-color: yellow;
-    pointer-events: none;
+    background-color: #324458;
+}
+
+button.purchased:hover {
+    cursor: not-allowed;
 }
 
 button.buyable {
     border-color: Green;
+    background-color: #324458;
 }
 
 button.buyable:hover {
@@ -54,8 +60,8 @@ button.buyable:hover {
 .menu-buttons {
     text-align: center;
     font-size: 12px;
-    color: black;
-    background-color: silver;
+    color: lightgray;
+    background-color: #324458;
     width: 90px;
     height: 25px;
     margin-left: 25px;
@@ -74,11 +80,12 @@ button.buyable:hover {
 .autobuy-buttons {
     font-size: 12px;
     height: 25px;
-    background-color: silver;
+    background-color: #324458;
     font-family: 'Roboto Mono';
-    color: black;
+    color: lightgray;
     border-width: 3px;
     transition-duration: 0.5s;
+    border-color: gray;
 }
 
 .autobuy-buttons:hover {
@@ -112,9 +119,9 @@ button.buyable:hover {
     font-size: 12px;
     height: 25px;
     font-family: 'Roboto Mono';
-    color: black;
+    color: lightgray;
     border-width: 3px;
-    background-color: silver;
+    background-color: #324458;
     transition-duration: 0.5s;
 }
 
@@ -130,9 +137,9 @@ button.buyable:hover {
 .upgrade-buttons {
     font-size: 7px;
     line-height: 2;
-    background-color: silver;
+    background-color: #324458;
     font-family: 'Roboto Mono';
-    color: black;
+    color: lightgray;
     border-width: 3px;
     width: 150px;
     height: 75px;
@@ -146,9 +153,9 @@ button.buyable:hover {
 .boost-buttons {
     font-size: 10px;
     line-height: 2;
-    background-color: silver;
+    background-color: #324458;
     font-family: 'Roboto Mono';
-    color: black;
+    color: lightgray;
     border-width: 3px;
     width: 150px;
     height: 75px;
@@ -170,9 +177,10 @@ button.buyable:hover {
     font-size: 12px;
     height: 25px;
     font-family: 'Roboto Mono';
-    color: black;
+    color: lightgray;
     border-width: 3px;
-    background-color: silver;
+    background-color: #324458;
+    border-color: gray;
 }
 
 .settings-buttons:hover {

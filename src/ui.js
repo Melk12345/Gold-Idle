@@ -10,7 +10,7 @@ const boostMenuButtonElement = document.getElementById("boost-menu-button");
 const settingsMenuButtonElement = document.getElementById("settings-menu-button");
 
 const selectedButtonBorderColor = 'Orange';
-const defaultButtonBorderColor = 'Black';
+const defaultButtonBorderColor = 'Gray';
 
 let activeMenuButton = boostMenuButtonElement;
 boostMenuButtonElement.style.borderColor = selectedButtonBorderColor;

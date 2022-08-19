@@ -5,17 +5,17 @@ const buildings = [{
     costGrowthRate: 1.4,
 }, {
     name: "Factory",
-    baseEffect: 10, 
+    baseEffect: 9, 
     baseCost: 250,
     costGrowthRate: 1.6,
 }, {
     name: "Producer",
-    baseEffect: 100, 
+    baseEffect: 87, 
     baseCost: 10000,
     costGrowthRate: 1.8,
 }, {
     name: "Generator",
-    baseEffect: 1000, 
+    baseEffect: 748, 
     baseCost: 550000,
     costGrowthRate: 2,
 }];
@@ -50,15 +50,15 @@ const upgrades = [{
 }, { 
     description: "Unlocks the Buildings Autobuyer button!",
     type: "Unlockable",
-    unlockCost: 1e15
+    unlockCost: 1e13
 }, {
     description: "Unlocks the Upgrades Autobuyer button!",
     type: "Unlockable",
-    unlockCost: 1e20
+    unlockCost: 1e18
 }, {
     description: "Unlocks the Prestige Autobuyer button!",
     type: "Unlockable",
-    unlockCost: 1e25
+    unlockCost: 1e23
 }]
 
 let data = {
