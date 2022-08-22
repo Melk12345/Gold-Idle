@@ -23,7 +23,7 @@ function productionLoop(deltaTime) {
     updateBuildingPurchaseColor();
     updatePrestigeButtonColor();
     updateUpgradesColor();
-    updateUpgradeInfO();
+    updateUpgradeInfo();
 }
 
 function calculateAFKGains() {
@@ -66,7 +66,8 @@ function load() {
     revealBuildings();
     updateBuildingInfo();
     revealUnlockables();
-    updateUpgradeInfO();
+    updateUpgradeInfo();
+    updateAutobuyerText();
     updatePrestigeInfo();
     updateAFKGainsButtonInfo();
 }

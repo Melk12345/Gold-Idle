@@ -18,11 +18,11 @@ function updatePrestigeInfo() {
 
 function updatePrestigeButtonColor() {
     if (data.gold < boostCost()) {
-        document.getElementById(`unlockable4-button`).classList.add("notBuyable");
-        document.getElementById(`unlockable4-button`).classList.remove("buyable");
+        document.getElementById(`unlockable3-button`).classList.add("notBuyable");
+        document.getElementById(`unlockable3-button`).classList.remove("buyable");
     } else {
-        document.getElementById(`unlockable4-button`).classList.add("buyable");
-        document.getElementById(`unlockable4-button`).classList.remove("notBuyable");
+        document.getElementById(`unlockable3-button`).classList.add("buyable");
+        document.getElementById(`unlockable3-button`).classList.remove("notBuyable");
     }
 }
 

@@ -22,13 +22,29 @@ function upgradeEffect(upgradeID, currentGps = goldPerSecond() + 1) {
     }
 }
 
+function buildingMultiplier() {
+    let buildingAmounts = 0;
+    for (let i = 0; i < data.buildingAmounts.length; i++) {
+        buildingAmounts += data.buildingAmounts[i];
+    }
+    return data.upgradesUnlocked.buildingMultiplier ? Math.sqrt(buildingAmounts + 1) + 1 : 1;
+}
+
+const goldPerSecondMultiplier = () => data.upgradesUnlocked.goldPerSecondMultiplier ? Math.log(data.gold + 1) + 1 : 1;
+
+function goldMultiplier(currentGps = goldPerSecond() + 1) {
+    return data.upgradesUnlocked.goldMultiplier ? Math.log(currentGps + 1) + 1 : 1;
+}
+
+const prestigeMultiplier = () => data.upgradesUnlocked.prestigeMultiplier ? Math.sqrt(data.boostLevel + 1) + 1 : 1;
+
 function buildingEffect(buildingID) {
     let baseEffect = buildings[buildingID].baseEffect;
     let amount = data.buildingAmounts[buildingID];
     return amount === 0 ? baseEffect : baseEffect * amount * upgradeEffect(0);
 }
 
-function updateUpgradeInfO() {
+function updateUpgradeInfo() {
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
         let description = upgrades[i].description;
         let cost = upgrades[i].unlockCost;
@@ -36,24 +52,25 @@ function updateUpgradeInfO() {
         for (let i = 0; i < data.buildingAmounts.length; i++) {
             buildingAmounts += data.buildingAmounts[i];
         }
-        let multiplier1 = Math.sqrt(buildingAmounts + 1) + 1;
-        let multiplier2 = Math.log(data.gold + 1) + 1;
-        let multiplier3 = Math.log(goldPerSecond() + 1) + 1;
-        let multiplier4 = Math.sqrt(data.boostLevel + 1) + 1;
-        const effects = [multiplier1, multiplier2, multiplier3, multiplier4];
+        const effects = [
+            buildingMultiplier(),
+            goldPerSecondMultiplier(),
+            goldMultiplier(currentGps = goldPerSecond() + 1),
+            prestigeMultiplier()
+        ];
 
         if (upgrades[i].type === "Multiplier") {
 
-            document.getElementById(`upgrade${i}-description`).textContent = description;
             document.getElementById(`upgrade${i}-effect`).textContent = `Currently: ${format(effects[i])}x`;
             document.getElementById(`upgrade${i}-cost`).textContent = data.upgradesUnlocked[i] ? `Cost: [UNLOCKED]` : `Cost: ${format((cost))} gold`;
         } else {
             let effect = data.upgradesUnlocked[i] ? "Currently: [UNLOCKED]" : "Currently: [LOCKED]"
 
-            document.getElementById(`upgrade${i}-description`).textContent = description;
             document.getElementById(`upgrade${i}-effect`).textContent = effect;
             document.getElementById(`upgrade${i}-cost`).textContent = `Cost: ${format((cost))} gold`;
         }
+
+        document.getElementById(`upgrade${i}-description`).textContent = description;
     }
 }
 
@@ -62,7 +79,7 @@ function buyUpgrade(upgradeID) {
 
     data.gold -= upgrades[upgradeID].unlockCost;
     data.upgradesUnlocked[upgradeID] = true;
-    updateUpgradeInfO();
+    updateUpgradeInfo();
     revealUnlockables();
     updateBuildingInfo();
 }
@@ -83,4 +100,15 @@ function updateUpgradesColor() {
             document.getElementById(`upgrade${i}-button`).classList.remove("purchased");
         }
     }
+}
+
+function updateAutobuyerText() {
+    for (let i = 0; i < data.autobuyerToggles.length; i++) {
+        document.getElementById(`unlockable${i}-button`).textContent = `Auto: ${data.autobuyerToggles[i]}`;
+    }
+}
+
+function toggleAutobuy(autobuyerID) {
+    data.autobuyerToggles[autobuyerID] = !data.autobuyerToggles[autobuyerID];
+    updateAutobuyerText();
 }

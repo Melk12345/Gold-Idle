@@ -69,5 +69,19 @@ let data = {
     buildingAmounts: [0, 0, 0, 0],
     buildingsUnlocked: [true, false, false, false],
     boostLevel: 0,
-    upgradesUnlocked: [false, false, false, false, false, false, false, false]
+    upgradesUnlocked: {
+        buildingMultiplier: false,
+        goldPerSecondMultiplier: false,
+        goldMultiplier: false,
+        prestigeMultiplier: false,
+        prestigeButton: false,
+        buildingsAutobuyer: false,
+        upgradesAutobuyer: false,
+        prestigeAutobuyer: false
+    }, 
+    autobuyerToggles: {
+        buildingsAutobuyer: false,
+        upgradesAutobuyer: false,
+        prestigeAutobuyer: false
+    }
 }
