@@ -21,7 +21,7 @@ function updateBuildingInfo() {
     for (let i = 0; i < data.buildingAmounts.length; i++) {
         let name = buildings[i].name;
         let amount = data.buildingAmounts[i];
-        let effect = buildings[i].baseEffect * upgradeEffect(0);
+        let effect = buildings[i].baseEffect * buildingMultiplier();
         let cost = buildingCost(i);
 
         document.getElementById(`building${i}-name`).textContent = name;

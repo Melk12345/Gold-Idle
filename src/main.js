@@ -10,14 +10,14 @@ function updateGoldText() {
 function goldPerSecond() {
     let goldPerSecond = 0;
     for (let i = 0; i < data.buildingsUnlocked.length; i++) {
-        goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i] * upgradeEffect(0, goldPerSecond);
+        goldPerSecond += buildings[i].baseEffect * data.buildingAmounts[i] * buildingMultiplier();
     }
-    goldPerSecond *= boostMultiplier() * upgradeEffect(1, goldPerSecond);
+    goldPerSecond *= boostMultiplier() * goldPerSecondMultiplier();
     return goldPerSecond;
 }
 
 function productionLoop(deltaTime) {
-    data.gold += goldPerSecond() * upgradeEffect(2) * deltaTime;
+    data.gold += goldPerSecond() * goldMultiplier() * deltaTime;
     updateGoldText();
     updateGoldPerSecondText();
     updateBuildingPurchaseColor();

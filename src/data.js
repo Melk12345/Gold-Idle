@@ -52,11 +52,11 @@ const upgrades = [{
     type: "Unlockable",
     unlockCost: 1e13
 }, {
-    description: "Unlocks the Upgrades Autobuyer button!",
+    description: "Unlocks the Prestige Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e18
 }, {
-    description: "Unlocks the Prestige Autobuyer button!",
+    description: "Unlocks the Upgrades Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e23
 }]
@@ -69,19 +69,6 @@ let data = {
     buildingAmounts: [0, 0, 0, 0],
     buildingsUnlocked: [true, false, false, false],
     boostLevel: 0,
-    upgradesUnlocked: {
-        buildingMultiplier: false,
-        goldPerSecondMultiplier: false,
-        goldMultiplier: false,
-        prestigeMultiplier: false,
-        prestigeButton: false,
-        buildingsAutobuyer: false,
-        upgradesAutobuyer: false,
-        prestigeAutobuyer: false
-    }, 
-    autobuyerToggles: {
-        buildingsAutobuyer: false,
-        upgradesAutobuyer: false,
-        prestigeAutobuyer: false
-    }
+    upgradesUnlocked: [false, false, false, false, false, false, false, false],
+    autobuyerToggles: [false, false, false]
 }

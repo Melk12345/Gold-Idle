@@ -5,43 +5,26 @@ function revealUnlockables() {
     }
 }
 
-function upgradeEffect(upgradeID, currentGps = goldPerSecond() + 1) {
-    let buildingAmounts = 0;
-    switch (upgradeID) {
-        case 0:
-            for (let i = 0; i < data.buildingAmounts.length; i++) {
-                buildingAmounts += data.buildingAmounts[i];
-            }
-            return data.upgradesUnlocked[0] ? Math.sqrt(buildingAmounts + 1) + 1 : 1;
-        case 1:
-            return data.upgradesUnlocked[1] ? Math.log(data.gold + 1) + 1 : 1;
-        case 2:
-            return data.upgradesUnlocked[2] ? Math.log(currentGps + 1) + 1 : 1;
-        case 3:
-            return data.upgradesUnlocked[3] ? Math.sqrt(data.boostLevel + 1) + 1 : 1;
-    }
-}
-
 function buildingMultiplier() {
     let buildingAmounts = 0;
     for (let i = 0; i < data.buildingAmounts.length; i++) {
         buildingAmounts += data.buildingAmounts[i];
     }
-    return data.upgradesUnlocked.buildingMultiplier ? Math.sqrt(buildingAmounts + 1) + 1 : 1;
+    return data.upgradesUnlocked[0] ? Math.sqrt(buildingAmounts + 1) + 1 : 1;
 }
 
-const goldPerSecondMultiplier = () => data.upgradesUnlocked.goldPerSecondMultiplier ? Math.log(data.gold + 1) + 1 : 1;
+const goldPerSecondMultiplier = () => data.upgradesUnlocked[1] ? Math.log(data.gold + 1) + 1 : 1;
 
-function goldMultiplier(currentGps = goldPerSecond() + 1) {
-    return data.upgradesUnlocked.goldMultiplier ? Math.log(currentGps + 1) + 1 : 1;
+function goldMultiplier() {
+    return data.upgradesUnlocked[2] ? Math.log(goldPerSecond() + 1 + 1) + 1 : 1;
 }
 
-const prestigeMultiplier = () => data.upgradesUnlocked.prestigeMultiplier ? Math.sqrt(data.boostLevel + 1) + 1 : 1;
+const prestigeMultiplier = () => data.upgradesUnlocked[3] ? Math.sqrt(data.boostLevel + 1) + 1 : 1;
 
 function buildingEffect(buildingID) {
     let baseEffect = buildings[buildingID].baseEffect;
     let amount = data.buildingAmounts[buildingID];
-    return amount === 0 ? baseEffect : baseEffect * amount * upgradeEffect(0);
+    return amount === 0 ? baseEffect : baseEffect * amount * buildingMultiplier();
 }
 
 function updateUpgradeInfo() {
@@ -52,20 +35,17 @@ function updateUpgradeInfo() {
         for (let i = 0; i < data.buildingAmounts.length; i++) {
             buildingAmounts += data.buildingAmounts[i];
         }
-        const effects = [
-            buildingMultiplier(),
-            goldPerSecondMultiplier(),
-            goldMultiplier(currentGps = goldPerSecond() + 1),
-            prestigeMultiplier()
-        ];
+        let buildingMultiplier = Math.sqrt(buildingAmounts + 1) + 1;
+        let goldPerSecondMultiplier = Math.log(data.gold + 1) + 1;
+        let goldMultiplier =  Math.log(goldPerSecond() + 1 + 1) + 1;
+        let prestigeMultiplier = Math.sqrt(data.boostLevel + 1) + 1;
+        let effects = [buildingMultiplier, goldPerSecondMultiplier, goldMultiplier, prestigeMultiplier];
 
         if (upgrades[i].type === "Multiplier") {
-
             document.getElementById(`upgrade${i}-effect`).textContent = `Currently: ${format(effects[i])}x`;
             document.getElementById(`upgrade${i}-cost`).textContent = data.upgradesUnlocked[i] ? `Cost: [UNLOCKED]` : `Cost: ${format((cost))} gold`;
         } else {
             let effect = data.upgradesUnlocked[i] ? "Currently: [UNLOCKED]" : "Currently: [LOCKED]"
-
             document.getElementById(`upgrade${i}-effect`).textContent = effect;
             document.getElementById(`upgrade${i}-cost`).textContent = `Cost: ${format((cost))} gold`;
         }
@@ -103,12 +83,13 @@ function updateUpgradesColor() {
 }
 
 function updateAutobuyerText() {
-    for (let i = 0; i < data.autobuyerToggles.length; i++) {
-        document.getElementById(`unlockable${i}-button`).textContent = `Auto: ${data.autobuyerToggles[i]}`;
+    for (let i = 5; i < data.autobuyerToggles.length + 5; i++) {
+        document.getElementById(`unlockable${i}-button`).textContent = data.autobuyerToggles[i - 5] ? "Auto: ON" : "Auto: OFF";
     }
 }
 
 function toggleAutobuy(autobuyerID) {
-    data.autobuyerToggles[autobuyerID] = !data.autobuyerToggles[autobuyerID];
+    let realAutobuyerID = autobuyerID - 5;
+    data.autobuyerToggles[realAutobuyerID] = !data.autobuyerToggles[realAutobuyerID];
     updateAutobuyerText();
 }

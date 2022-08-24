@@ -49,16 +49,10 @@ function exportData() {
 const toggleAFKGainsButtonElement = document.getElementById("toggle-afk-gains-button");
 
 function updateAFKGainsButtonInfo() {
-    if (data.AFKGains) toggleAFKGainsButtonElement.textContent = "AFK Gains: ON";
-    else toggleAFKGainsButtonElement.textContent = "AFK Gains: OFF";
+    toggleAFKGainsButtonElement.textContent = data.AFKGains ? "AFK Gains: ON" : "AFK Gains: OFF";
 }
 
 function toggleAFKGains() {
-    if (data.AFKGains) {
-        data.AFKGains = false;
-        updateAFKGainsButtonInfo();
-    } else {
-        data.AFKGains = true;
-        updateAFKGainsButtonInfo();
-    }
+    data.AFKGains = !data.AFKGains;
+    updateAFKGainsButtonInfo();
 }

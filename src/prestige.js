@@ -7,7 +7,7 @@ function boostMultiplier() {
 function updatePrestigeInfo() {
     let name = boost.name;
     let amount = data.boostLevel;
-    let effect = boostMultiplier() * upgradeEffect(3);
+    let effect = boostMultiplier() * prestigeMultiplier();
     let cost = boostCost();
 
     document.getElementById(`boost-name`).textContent = name;
@@ -18,11 +18,11 @@ function updatePrestigeInfo() {
 
 function updatePrestigeButtonColor() {
     if (data.gold < boostCost()) {
-        document.getElementById(`unlockable3-button`).classList.add("notBuyable");
-        document.getElementById(`unlockable3-button`).classList.remove("buyable");
+        document.getElementById(`unlockable4-button`).classList.add("notBuyable");
+        document.getElementById(`unlockable4-button`).classList.remove("buyable");
     } else {
-        document.getElementById(`unlockable3-button`).classList.add("buyable");
-        document.getElementById(`unlockable3-button`).classList.remove("notBuyable");
+        document.getElementById(`unlockable4-button`).classList.add("buyable");
+        document.getElementById(`unlockable4-button`).classList.remove("notBuyable");
     }
 }
 
