@@ -5,17 +5,17 @@ const buildings = [{
     costGrowthRate: 1.4,
 }, {
     name: "Factory",
-    baseEffect: 9, 
+    baseEffect: 10, 
     baseCost: 250,
     costGrowthRate: 1.6,
 }, {
     name: "Producer",
-    baseEffect: 87, 
+    baseEffect: 100, 
     baseCost: 10000,
     costGrowthRate: 1.8,
 }, {
     name: "Generator",
-    baseEffect: 748, 
+    baseEffect: 1000, 
     baseCost: 550000,
     costGrowthRate: 2,
 }];
