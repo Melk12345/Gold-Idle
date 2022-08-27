@@ -30,11 +30,13 @@ button.purchased:hover {
 button.buyable {
     border-color: Green;
     background-color: #324458;
+    transition-duration: 0.5s;
 }
 
 button.buyable:hover {
     cursor: pointer;
     transform: scale(1.1);
+    transition-duration: 0.5s;
 }
 
 #header-container {
