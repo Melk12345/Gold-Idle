@@ -36,9 +36,10 @@ function updateGoldPerSecondText() {
 }
 
 function revealBuildings() {
-    for (let i = 0; i < data.buildingAmounts.length; i++) {
-        let element = document.getElementById(`building${i}-row`);
-        element.style.display = data.buildingsUnlocked[i] ? "table-row" : "none";
+    for (let i = 1; i < data.buildingAmounts.length + 1; i++) {
+        let element = document.getElementById(`building${i - 1}-row`);
+        if (i - 1 === 0) element.style.display = "table-row";
+        else element.style.display = data.buildingAmounts[i - 2] > 0 ? "table-row" : "none";
     }
 }
 
@@ -47,9 +48,6 @@ function buyBuilding(buildingID) {
 
     data.gold -= buildingCost(buildingID);
     data.buildingAmounts[buildingID]++;
-    if (data.buildingsUnlocked[data.buildingsUnlocked.length - 1] === false) {
-        data.buildingsUnlocked[buildingID + 1] = true;
-    }
 
     let amount = data.buildingAmounts[buildingID];
     let cost = buildingCost(buildingID);

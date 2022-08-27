@@ -72,7 +72,6 @@ let data = {
     AFKGains: true,
     gold: 10,
     buildingAmounts: [0, 0, 0, 0, 0],
-    buildingsUnlocked: [true, false, false, false, false],
     boostLevel: 0,
     upgradesUnlocked: [false, false, false, false, false, false, false, false],
     autobuyerToggles: [false, false, false]

@@ -36,12 +36,13 @@ function doPrestige() {
     
     data.gold = 10;
     data.boostLevel++;
-    for (let i = 0; i < data.buildingsUnlocked.length; i++) {
+    for (let i = 0; i < data.buildingAmounts.length; i++) {
         data.buildingAmounts[i] = 0;
     }
     for (let i = 0; i < data.upgradesUnlocked.length / 2; i++) {
         data.upgradesUnlocked[i] = false;
     }
+    revealBuildings();
     updateBuildingInfo();
     updatePrestigeInfo();
     updatePrestigeButtonColor();
