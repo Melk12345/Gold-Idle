@@ -10,17 +10,17 @@ const buildings = [{
     costGrowthRate: 1.4,
 }, {
     name: "Shipment",
-    baseEffect: 47, 
+    baseEffect: 64, 
     baseCost: 10000,
     costGrowthRate: 1.6,
 }, {
     name: "Producer",
-    baseEffect: 264, 
+    baseEffect: 512, 
     baseCost: 550000,
     costGrowthRate: 1.8,
 }, {
     name: "Generator",
-    baseEffect: 1423, 
+    baseEffect: 4096, 
     baseCost: 38500000,
     costGrowthRate: 2,
 }];
