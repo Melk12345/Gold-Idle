@@ -1,22 +1,27 @@
 const buildings = [{
-    name: "Printer",
+    name: "Factory",
     baseEffect: 1, 
     baseCost: 10,
+    costGrowthRate: 1.2,
+}, {
+    name: "Printer",
+    baseEffect: 8, 
+    baseCost: 250,
     costGrowthRate: 1.4,
 }, {
-    name: "Factory",
-    baseEffect: 10, 
-    baseCost: 250,
+    name: "Shipment",
+    baseEffect: 47, 
+    baseCost: 10000,
     costGrowthRate: 1.6,
 }, {
     name: "Producer",
-    baseEffect: 100, 
-    baseCost: 10000,
+    baseEffect: 264, 
+    baseCost: 550000,
     costGrowthRate: 1.8,
 }, {
     name: "Generator",
-    baseEffect: 1000, 
-    baseCost: 550000,
+    baseEffect: 1423, 
+    baseCost: 38500000,
     costGrowthRate: 2,
 }];
 
@@ -66,8 +71,8 @@ let data = {
     firstTime: true,
     AFKGains: true,
     gold: 10,
-    buildingAmounts: [0, 0, 0, 0],
-    buildingsUnlocked: [true, false, false, false],
+    buildingAmounts: [0, 0, 0, 0, 0],
+    buildingsUnlocked: [true, false, false, false, false],
     boostLevel: 0,
     upgradesUnlocked: [false, false, false, false, false, false, false, false],
     autobuyerToggles: [false, false, false]

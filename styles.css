@@ -119,8 +119,9 @@ button.buyable:hover {
 }
 
 .purchase-buttons {
-    font-size: 12px;
-    height: 25px;
+    font-size: 11px;
+    height: 30px;
+    width: 130px;
     font-family: 'Roboto Mono';
     color: lightgray;
     border-width: 3px;
