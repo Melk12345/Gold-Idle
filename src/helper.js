@@ -9,28 +9,33 @@ function formatWithCommas(amount) {
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function buyMultiple(numberToBuy, baseCost, growthRate, currentAmount) {
-    return baseCost * Math.pow(growthRate, currentAmount) * ((Math.pow(growthRate, numberToBuy) - 1) / (growthRate - 1));
+function buildingCost(baseCost, growthRate, currentAmount) {
+    return baseCost * Math.pow(growthRate, currentAmount);
 }
 
-function calculateMaxAmountAffordable(currentGold, baseCost, growthRate, currentAmount) {
-    return Math.floor(Math.log((currentGold * (growthRate - 1)) / (baseCost * Math.pow(growthRate, currentAmount)) + 1, growthRate));
+function buyMax(currentGold, baseCost, growthRate, currentAmount) {
+    let temp = currentGold * (growthRate - 1);
+    let temp1 = buildingCost(baseCost, growthRate, currentAmount) + (1, growthRate);
+    let amountPurchased = Math.floor(Math.log(currentGold * (growthRate - 1) / buildingCost(baseCost, growthRate, currentAmount) + (1, growthRate)));
+    let cost = buildingCost(baseCost, growthRate, currentAmount) * ((Math.pow(growthRate, amountPurchased) - 1) / (growthRate - 1));
+    console.log(temp);
+    console.log(temp1);
+    console.log(Math.log(temp/temp1));
+    if (currentGold < cost) return;
+    currentGold -= cost;
+    currentAmount += amountPurchased;
 }
 
 function buyMaxBuilding(ID) {
-    let amountPurchased = calculateMaxAmountAffordable(data.gold, buildings[ID].baseCost, buildings[ID].costGrowthRate, data.buildingAmounts[ID]);
-    let cost = buyMultiple(amountPurchased, buildings[ID].baseCost, buildings[ID].costGrowthRate, data.buildingAmounts[ID]);
-    data.gold -= cost;
-    data.buildingAmounts[ID] += amountPurchased;
-    revealBuildings();
-    updateBuildingInfo();
-    console.log(ID);
+    buyMax(data.gold, buildings[ID].baseCost, buildings[ID].costGrowthRate, data.buildingAmounts[ID]);
 }
 
 function buyMaxBuildings() {
     for (let i = data.buildingAmounts.length - 1; i >= 0; i--) {
         buyMaxBuilding(i);
     }
+    revealBuildings();
+    updateBuildingInfo();
 }
 
 function revealBuildings() {

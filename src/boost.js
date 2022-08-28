@@ -1,13 +1,6 @@
-function buildingCost(buildingID) {
-    let baseCost = buildings[buildingID].baseCost;
-    let growthRate = buildings[buildingID].costGrowthRate;
-    let amount = data.buildingAmounts[buildingID];
-    return baseCost * Math.pow(growthRate, amount);
-}
-
 function updateBuildingPurchaseColor() {
     for (let i = 0; i < data.buildingAmounts.length; i++) {
-        if (data.gold < buildingCost(i)) {
+        if (data.gold < buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i])) {
             document.getElementById(`building${i}-button`).classList.add("notBuyable");
             document.getElementById(`building${i}-button`).classList.remove("buyable");
         } else {
@@ -22,7 +15,7 @@ function updateBuildingInfo() {
         let name = buildings[i].name;
         let amount = data.buildingAmounts[i];
         let effect = buildings[i].baseEffect * buildingMultiplier();
-        let cost = buildingCost(i);
+        let cost = buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]);
 
         document.getElementById(`building${i}-name`).textContent = name;
         document.getElementById(`building${i}-amount`).textContent = formatWithCommas(amount);
@@ -44,13 +37,13 @@ function revealBuildings() {
 }
 
 function buyBuilding(buildingID) {
-    if (data.gold < buildingCost(buildingID)) return;
+    let cost = buildingCost(buildings[buildingID].baseCost, buildings[buildingID].costGrowthRate, data.buildingAmounts[buildingID]);
+    if (data.gold < cost) return;
 
-    data.gold -= buildingCost(buildingID);
+    data.gold -= cost
     data.buildingAmounts[buildingID]++;
 
     let amount = data.buildingAmounts[buildingID];
-    let cost = buildingCost(buildingID);
     document.getElementById(`building${buildingID}-amount`).textContent = formatWithCommas(amount);
     document.getElementById(`building${buildingID}-cost`).textContent = `${format((cost))}`;
     revealBuildings();
