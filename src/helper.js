@@ -14,14 +14,11 @@ function buildingCost(baseCost, growthRate, currentAmount) {
 }
 
 function buyMax(currentGold, baseCost, growthRate, currentAmount) {
-    let temp = currentGold * (growthRate - 1);
-    let temp1 = buildingCost(baseCost, growthRate, currentAmount) + (1, growthRate);
     let amountPurchased = Math.floor(Math.log(currentGold * (growthRate - 1) / buildingCost(baseCost, growthRate, currentAmount) + (1, growthRate)));
     let cost = buildingCost(baseCost, growthRate, currentAmount) * ((Math.pow(growthRate, amountPurchased) - 1) / (growthRate - 1));
-    console.log(temp);
-    console.log(temp1);
-    console.log(Math.log(temp/temp1));
     if (currentGold < cost) return;
+    console.log(cost);
+    console.log(amountPurchased);
     currentGold -= cost;
     currentAmount += amountPurchased;
 }
