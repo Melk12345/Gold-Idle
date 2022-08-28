@@ -17,12 +17,16 @@ function calculateMaxAmountAffordable(currentGold, baseCost, growthRate, current
     return Math.floor(Math.log((currentGold * (growthRate - 1)) / (baseCost * Math.pow(growthRate, currentAmount)) + 1, growthRate));
 }
 
+function buyMaxBuilding(ID) {
+    let amountPurchased = calculateMaxAmountAffordable(data.gold, buildings[ID].baseCost, buildings[ID].costGrowthRate, data.buildingAmounts[ID]);
+    let cost = buyX(amountPurchased, buildings[ID].baseCost, buildings[ID].costGrowthRate, data.buildingAmounts[ID]);
+    data.gold -= cost;
+    data.buildingAmounts[ID] += amountPurchased;
+}
+
 function buyMaxBuildings() {
-    for (let i = data.buildingAmounts.length; i <= 0; i--) {
-        let cost = buyX(calculateMaxAmountAffordable(data.gold, buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]), buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]);
-        let amountPurchased = calculateMaxAmountAffordable(data.gold, buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]);
-        data.gold -= cost;
-        data.buildingAmounts[i] += amountPurchased;
+    for (let i = data.buildingAmounts.length; i >= 0; i--) {
+        buyMaxBuilding(i);
     }
 }
 
@@ -35,5 +39,5 @@ function revealBuildings() {
 }
 
 window.addEventListener('keydown', function(event) {
-    if (event.key === 'm') buyMaxBuildings();
+    if (event.key === 'M') buyMaxBuildings();
 });
