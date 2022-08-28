@@ -82,7 +82,7 @@ button.buyable:hover {
 .autobuy-buttons {
     font-size: 12px;
     height: 25px;
-    width: 85px;
+    width: 100px;
     background-color: #324458;
     font-family: 'Roboto Mono';
     color: lightgray;
@@ -92,6 +92,25 @@ button.buyable:hover {
 }
 
 .autobuy-buttons:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+#buyMaxButton {
+    font-size: 12px;
+    height: 25px;
+    width: 100px;
+    margin: 5px;
+    background-color: #324458;
+    font-family: 'Roboto Mono';
+    color: lightgray;
+    border-width: 3px;
+    transition-duration: 0.5s;
+    border-color: gray;
+}
+
+#buyMaxButton:hover {
     cursor: pointer;
     transform: scale(1.1);
     transition-duration: 0.5s;
