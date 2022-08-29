@@ -56,6 +56,7 @@ function buyBuilding(buildingID) {
 
 let buyMaxInProgress = false;
 
+// turn this into an event listener attached to the m key
 function buyMaxBuildings() {
     buyMaxInProgress = true;
 }

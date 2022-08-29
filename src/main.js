@@ -57,7 +57,7 @@ function mainLoop() {
     const deltaTime = (now - lastUpdate) / 1000;
     lastUpdate = now;
     productionLoop(deltaTime);
-    if (buyMaxInProgress) {
+    if (buyMaxInProgress || data.autobuyerToggles[0]) {
         if (data.gold >= getLowestBuildingCost()) {
             for (let i = 0; i < data.buildingAmounts.length; i++) {
                 buyBuilding(i);
