@@ -56,7 +56,13 @@ function buyBuilding(buildingID) {
 
 let buyMaxInProgress = false;
 
-// turn this into an event listener attached to the m key
 function buyMaxBuildings() {
     buyMaxInProgress = true;
 }
+
+window.addEventListener('keypress', function (event) {
+    if (event.key === 'm') {
+      buyMaxBuildings();
+      console.log("hi");
+    }
+});
