@@ -58,18 +58,24 @@ function mainLoop() {
     lastUpdate = now;
     productionLoop(deltaTime);
     if (buyMaxInProgress) {
-        for (let i = 0; i < data.buildingAmounts.length; i++) {
-            // figure out how to find the lowest cost
-            // use the lowest cost in the below if statement
-        }
-        if (data.gold >= cost) {
-            for (let i = data.buildingAmounts.length; i <= 0; i--) {
+        if (data.gold >= getLowestBuildingCost()) {
+            for (let i = 0; i < data.buildingAmounts.length; i++) {
                 buyBuilding(i);
             }
+        } else {
+            buyMaxInProgress = false;
         }
-    } else {
-        buyMaxInProgress = false;
     }
+}
+
+function getLowestBuildingCost() {
+    let lowestCost = Infinity;
+    for (let i = data.buildingAmounts.length - 1; i >= 0; i--) {
+        if (lowestCost > buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i])) {
+            lowestCost = buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]);
+        }
+    }
+    return lowestCost;
 }
 
 function load() {

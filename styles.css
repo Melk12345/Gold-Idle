@@ -100,7 +100,7 @@ button.buyable:hover {
 #buyMaxButton {
     font-size: 12px;
     height: 25px;
-    width: 150px;
+    width: 100px;
     margin: 5px;
     background-color: #324458;
     font-family: 'Roboto Mono';
