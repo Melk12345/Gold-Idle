@@ -32,8 +32,9 @@ function boostCost() {
 
 function doPrestige() {
     if (data.gold < boostCost()) return;
-    if (!confirm("Are you sure you want to Prestige? This will double your Multiplier, but reset the number of buildings to 0.")) return;
-    
+    if (data.prestigeConfirmation && !confirm("Are you sure you want to Prestige? This will double your Prestige Multiplier, but reset the amount of buildings back to 0.")) return;
+
+    buyMaxInProgress = false;
     data.gold = 10;
     data.boostLevel++;
     for (let i = 0; i < data.buildingAmounts.length; i++) {
@@ -47,4 +48,3 @@ function doPrestige() {
     updatePrestigeInfo();
     updatePrestigeButtonColor();
 }
-

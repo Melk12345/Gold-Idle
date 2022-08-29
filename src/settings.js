@@ -56,3 +56,14 @@ function toggleAFKGains() {
     data.AFKGains = !data.AFKGains;
     updateAFKGainsButtonInfo();
 }
+
+const togglePrestigeConfirmationButtonElement = document.getElementById("toggle-prestige-confirmation-button");
+
+function updatePrestigeConfirmationButtonInfo() {
+    togglePrestigeConfirmationButtonElement.textContent = data.prestigeConfirmation ? "Prestige Confirmation: ON" : "Prestige Confirmation: OFF";
+}
+
+function togglePrestigeConfirmation() {
+    data.prestigeConfirmation = !data.prestigeConfirmation;
+    updatePrestigeConfirmationButtonInfo();
+}

@@ -70,6 +70,7 @@ let data = {
     time: Date.now(),
     firstTime: true,
     AFKGains: true,
+    prestigeConfirmation: true,
     gold: 10,
     buildingAmounts: [0, 0, 0, 0, 0],
     boostLevel: 0,

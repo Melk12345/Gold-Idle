@@ -63,6 +63,5 @@ function buyMaxBuildings() {
 window.addEventListener('keypress', function (event) {
     if (event.key === 'm') {
       buyMaxBuildings();
-      console.log("hi");
     }
 });

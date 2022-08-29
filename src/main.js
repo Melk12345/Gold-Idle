@@ -89,6 +89,7 @@ function load() {
     updateAutobuyerText();
     updatePrestigeInfo();
     updateAFKGainsButtonInfo();
+    updatePrestigeConfirmationButtonInfo();
 }
 
 window.onload = function() {
