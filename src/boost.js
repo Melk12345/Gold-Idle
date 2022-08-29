@@ -1,3 +1,7 @@
+function buildingCost(baseCost, growthRate, currentAmount) {
+    return baseCost * Math.pow(growthRate, currentAmount);
+}
+
 function updateBuildingPurchaseColor() {
     for (let i = 0; i < data.buildingAmounts.length; i++) {
         if (data.gold < buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i])) {
@@ -48,4 +52,10 @@ function buyBuilding(buildingID) {
     document.getElementById(`building${buildingID}-cost`).textContent = `${format((cost))}`;
     revealBuildings();
     updateBuildingInfo();
+}
+
+let buyMaxInProgress = false;
+
+function buyMaxBuildings() {
+    buyMaxInProgress = true;
 }

@@ -57,6 +57,19 @@ function mainLoop() {
     const deltaTime = (now - lastUpdate) / 1000;
     lastUpdate = now;
     productionLoop(deltaTime);
+    if (buyMaxInProgress) {
+        for (let i = 0; i < data.buildingAmounts.length; i++) {
+            // figure out how to find the lowest cost
+            // use the lowest cost in the below if statement
+        }
+        if (data.gold >= cost) {
+            for (let i = data.buildingAmounts.length; i <= 0; i--) {
+                buyBuilding(i);
+            }
+        }
+    } else {
+        buyMaxInProgress = false;
+    }
 }
 
 function load() {
