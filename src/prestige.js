@@ -1,13 +1,13 @@
 function boostMultiplier() {
     let effect = boost.baseEffect;
     let amount = data.boostLevel;
-    return amount === 0 ? 1 : Math.pow(effect, amount);
+    return amount === 0 ? 1 : Math.pow(effect, amount) * prestigeMultiplier();
 }
 
 function updatePrestigeInfo() {
     let description = boost.description;
     let amount = data.boostLevel;
-    let effect = boostMultiplier() * prestigeMultiplier();
+    let effect = boostMultiplier();
     let cost = boostCost();
 
     document.getElementById(`boost-description`).textContent = description;

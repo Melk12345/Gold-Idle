@@ -62,6 +62,7 @@ function buyUpgrade(upgradeID) {
     updateUpgradeInfo();
     revealUnlockables();
     updateBuildingInfo();
+    updatePrestigeInfo();
 }
 
 function updateUpgradesColor() {

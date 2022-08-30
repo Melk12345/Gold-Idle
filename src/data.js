@@ -49,7 +49,7 @@ const upgrades = [{
     type: "Multiplier",
     unlockCost: 1e10
 }, {
-    description: "Unlocks the Prestige Multiplier button!",
+    description: "Unlocks the Boost Multiplier button!",
     type: "Unlockable",
     unlockCost: 50000
 }, { 
@@ -57,7 +57,7 @@ const upgrades = [{
     type: "Unlockable",
     unlockCost: 1e13
 }, {
-    description: "Unlocks the Prestige Autobuyer button!",
+    description: "Unlocks the Boost Autobuyer button!",
     type: "Unlockable",
     unlockCost: 1e18
 }, {
