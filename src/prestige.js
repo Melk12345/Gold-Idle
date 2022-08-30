@@ -1,7 +1,7 @@
 function boostMultiplier() {
     let effect = boost.baseEffect;
     let amount = data.boostLevel;
-    return amount === 0 ? 1 : Math.pow(effect, amount) * prestigeMultiplier();
+    return amount === 0 ? 1 * prestigeMultiplier() : Math.pow(effect, amount) * prestigeMultiplier();
 }
 
 function updatePrestigeInfo() {
