@@ -59,10 +59,10 @@ function buyUpgrade(upgradeID) {
 
     data.gold -= upgrades[upgradeID].unlockCost;
     data.upgradesUnlocked[upgradeID] = true;
+    updatePrestigeInfo();
     updateUpgradeInfo();
     revealUnlockables();
     updateBuildingInfo();
-    updatePrestigeInfo();
 }
 
 function updateUpgradesColor() {
