@@ -186,12 +186,6 @@ button.buyable:hover {
     transition-duration: 0.5s;
 }
 
-.boost-buttons:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition-duration: 0.5s;
-}
-
 #settings-container {
     text-align: center;
 }
