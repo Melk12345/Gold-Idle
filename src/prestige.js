@@ -12,7 +12,7 @@ function updatePrestigeInfo() {
 
     document.getElementById(`boost-description`).textContent = description;
     document.getElementById(`boost-amount`).textContent = `Level: ${amount}`;
-    document.getElementById(`boost-effect`).textContent = `Currently: x${format(effect)}`;
+    document.getElementById(`boost-effect`).textContent = `Currently: ${format(effect)}x`;
     document.getElementById(`boost-cost`).textContent = `Cost: ${format((cost))} gold`;
 }
 
