@@ -5,13 +5,13 @@ function boostMultiplier() {
 }
 
 function updatePrestigeInfo() {
-    let name = boost.name;
+    let description = boost.description;
     let amount = data.boostLevel;
     let effect = boostMultiplier() * prestigeMultiplier();
     let cost = boostCost();
 
-    document.getElementById(`boost-name`).textContent = name;
-    document.getElementById(`boost-amount`).textContent = amount;
+    document.getElementById(`boost-description`).textContent = description;
+    document.getElementById(`boost-amount`).textContent = `Level: ${amount}`;
     document.getElementById(`boost-effect`).textContent = `Currently: x${format(effect)}`;
     document.getElementById(`boost-cost`).textContent = `Cost: ${format((cost))} gold`;
 }
@@ -32,8 +32,7 @@ function boostCost() {
 
 function doPrestige() {
     if (data.gold < boostCost()) return;
-    if (data.prestigeConfirmation && !confirm("Are you sure you want to Prestige? This will double your Prestige Multiplier, but reset the amount of buildings back to 0.")) return;
-
+    
     buyMaxInProgress = false;
     data.gold = 10;
     data.boostLevel++;

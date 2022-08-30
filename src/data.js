@@ -26,7 +26,7 @@ const buildings = [{
 }];
 
 const boost = {
-    name: "Prestige",
+    description: "Double your boost multiplier, but reset building amounts to 0",
     baseEffect: 2, 
     baseCost: 1e6,
     costGrowthRate: 10,
@@ -70,7 +70,6 @@ let data = {
     time: Date.now(),
     firstTime: true,
     AFKGains: true,
-    prestigeConfirmation: true,
     gold: 10,
     buildingAmounts: [0, 0, 0, 0, 0],
     boostLevel: 0,

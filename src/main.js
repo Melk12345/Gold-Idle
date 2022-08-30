@@ -57,6 +57,28 @@ function mainLoop() {
     const deltaTime = (now - lastUpdate) / 1000;
     lastUpdate = now;
     productionLoop(deltaTime);
+    handlePrestigeAutobuying();
+    handleUpgradeAutobuying();
+    handleBuildingAutobuying()
+}
+
+function handlePrestigeAutobuying() {
+    if (data.upgradesUnlocked[4] === false) return;
+    if (data.autobuyerToggles[1] === false) return;
+    
+    doPrestige();
+}
+
+function handleUpgradeAutobuying() {
+    if (data.autobuyerToggles[2] === false) return;
+    
+    for (let i = 0; i < data.upgradesUnlocked.length; i++) {
+        if (data.upgradesUnlocked[i]) continue;
+        buyUpgrade(i);
+    }
+}
+
+function handleBuildingAutobuying() {
     if (buyMaxInProgress || data.autobuyerToggles[0]) {
         if (data.gold >= getLowestBuildingCost()) {
             for (let i = 0; i < data.buildingAmounts.length; i++) {
@@ -89,7 +111,6 @@ function load() {
     updateAutobuyerText();
     updatePrestigeInfo();
     updateAFKGainsButtonInfo();
-    updatePrestigeConfirmationButtonInfo();
 }
 
 window.onload = function() {
