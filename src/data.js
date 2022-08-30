@@ -59,11 +59,11 @@ const upgrades = [{
 }, {
     description: "Unlocks the Boost Autobuyer button!",
     type: "Unlockable",
-    unlockCost: 1e15
+    unlockCost: 1e14
 }, {
     description: "Unlocks the Upgrades Autobuyer button!",
     type: "Unlockable",
-    unlockCost: 1e17
+    unlockCost: 1e15
 }]
 
 let data = {
