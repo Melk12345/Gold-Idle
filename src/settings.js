@@ -16,8 +16,12 @@ function loadSavedData() {
 function resetData() {
     if (!confirm("Are you sure you want to reset your data? ALL of your progress will be lost and you will need to start over!")) return;
 
-    data = null;
-    localStorage.removeItem(saveName);
+    data.time = Date.now();
+    data.gold = 10;
+    data.buildingAmounts = [0, 0, 0, 0, 0];
+    data.boostLevel = 0;
+    data.upgradesUnlocked = [false, false, false, false, false, false, false, false];
+    data.autobuyerToggles = [false, false, false];
     location.reload();
 }
 

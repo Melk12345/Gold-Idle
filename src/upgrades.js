@@ -96,14 +96,14 @@ function toggleAutobuy(autobuyerID) {
 }
 
 function handlePrestigeAutobuying() {
-    if (data.upgradesUnlocked[4] === false) return;
-    if (data.autobuyerToggles[1] === false) return;
+    if (!data.upgradesUnlocked[4]) return;
+    if (!data.autobuyerToggles[1]) return;
     
     doPrestige();
 }
 
 function handleUpgradeAutobuying() {
-    if (data.autobuyerToggles[2] === false) return;
+    if (!data.autobuyerToggles[2]) return;
     
     for (let i = 0; i < data.upgradesUnlocked.length; i++) {
         if (data.upgradesUnlocked[i]) continue;
@@ -120,6 +120,21 @@ function handleBuildingAutobuying() {
         } else {
             buyMaxInProgress = false;
         }
+    }
+}
+
+
+function option1() {
+    if (!a) return;
+
+    doSomething();
+    doSomethingElse();
+}
+
+function option2() {
+    if (a) {
+        doSomething();
+        doSomethingElse();
     }
 }
 
