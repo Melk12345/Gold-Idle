@@ -62,44 +62,6 @@ function mainLoop() {
     handleBuildingAutobuying()
 }
 
-function handlePrestigeAutobuying() {
-    if (data.upgradesUnlocked[4] === false) return;
-    if (data.autobuyerToggles[1] === false) return;
-    
-    doPrestige();
-}
-
-function handleUpgradeAutobuying() {
-    if (data.autobuyerToggles[2] === false) return;
-    
-    for (let i = 0; i < data.upgradesUnlocked.length; i++) {
-        if (data.upgradesUnlocked[i]) continue;
-        buyUpgrade(i);
-    }
-}
-
-function handleBuildingAutobuying() {
-    if (buyMaxInProgress || data.autobuyerToggles[0]) {
-        if (data.gold >= getLowestBuildingCost()) {
-            for (let i = 0; i < data.buildingAmounts.length; i++) {
-                buyBuilding(i);
-            }
-        } else {
-            buyMaxInProgress = false;
-        }
-    }
-}
-
-function getLowestBuildingCost() {
-    let lowestCost = Infinity;
-    for (let i = data.buildingAmounts.length - 1; i >= 0; i--) {
-        if (lowestCost > buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i])) {
-            lowestCost = buildingCost(buildings[i].baseCost, buildings[i].costGrowthRate, data.buildingAmounts[i]);
-        }
-    }
-    return lowestCost;
-}
-
 function load() {
     loadSavedData();
     calculateAFKGains();

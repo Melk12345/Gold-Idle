@@ -196,6 +196,7 @@ button.buyable:hover {
     font-family: 'Roboto Mono';
     color: lightgray;
     border-width: 3px;
+    margin: 5px;
     background-color: #324458;
     border-color: gray;
 }
