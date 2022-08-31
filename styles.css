@@ -180,8 +180,8 @@ button.buyable:hover {
     font-family: 'Roboto Mono';
     color: lightgray;
     border-width: 3px;
-    width: 200px;
-    height: 80px;
+    width: 150px;
+    height: 90px;
     margin: 5px;
     transition-duration: 0.5s;
 }
