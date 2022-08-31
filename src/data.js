@@ -26,7 +26,7 @@ const buildings = [{
 }];
 
 const boost = {
-    description: "Double your boost multiplier, but reset buildings and upgrades 1-4 back to level 0",
+    description: "Double your boost multiplier, but reset buildings and upgrades 1-4",
     baseEffect: 2, 
     baseCost: 1e6,
     costGrowthRate: 10,
