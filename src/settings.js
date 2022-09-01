@@ -1,6 +1,6 @@
 "use strict";
 
-const saveName = 'GoldIdleSave';
+const saveName = 'GoldIncrementalSave';
 
 function saveData() {
     data.time = Date.now();

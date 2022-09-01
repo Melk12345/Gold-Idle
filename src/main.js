@@ -80,7 +80,6 @@ window.onload = function() {
 }
 
 window.onbeforeunload = function() { 
-    data.previousGold = data.gold;
     autoSaveData();
 }
 
